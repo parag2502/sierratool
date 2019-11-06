@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Wikidata extension]">
+  <test name="tests">
+    <groups>
+      <run>
+        <exclude name="broken"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="org.openrefine.phonetic.*"/>
+    </packages>
+    <classes>
+      <class name="org.openrefine.phonetic.keyers.BeiderMorseKeyerTest"/>
+      <class name="org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest"/>
+      <class name="org.openrefine.phonetic.keyers.BeiderMorseKeyer"/>
+      <class name="org.openrefine.phonetic.keyers.DaitchMokotoffKeyer"/>
+    </classes>
+  </test> <!-- tests -->
+</suite> <!-- Failed suite [Wikidata extension] -->

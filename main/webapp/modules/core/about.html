@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About - SierraTool</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="/styles/common.less" />
+    <style>
+      #body-info {
+        margin-bottom: 10em;
+      }
+    </style>
+    <script type="text/javascript" src="scripts/version.js"></script>
+    <script type="text/javascript" src="externals/jquery-1.11.1.js"></script>
+    <script>
+      $(function() {
+        if (OpenRefineVersion && OpenRefineVersion.version) {
+          if (OpenRefineVersion.version != "$VERSION") {
+            $("#version").text("Version 1.0").show();
+          }
+          else {
+            $("#version").text("Version <trunk>").show();
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <a id="app-home-button" href="./"><img alt="SierraTool" src="images/logo-openrefine-550.png" height="29" /></a>
+    </div>
+
+    <div id="body-info">
+      <h1>About SierraTool</h1>
+      <h2 id="version" style="display: none"></h2>
+      
+      <p>
+        SierraTool is a power tool for working with messy data. Use it to improve data consistency,
+        link it to data registries like Wikidata, augment it with data from other sources, transform it
+        into different formats for other tools to consume, and contribute it to back to the original
+        sources. SierraTool is not a web service but a desktop app that runs on your own computer,
+        so you can process sensitive data with privacy.
+      </p>
+        
+    </div>
+  </body>
+</html>

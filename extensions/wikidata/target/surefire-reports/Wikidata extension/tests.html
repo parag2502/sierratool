@@ -1,0 +1,1963 @@
+<html>
+<head>
+<title>TestNG:  tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>258/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Nov 05 11:44:00 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>13 seconds (13304 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td>broken </td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.constructInvalid()'><b>constructInvalid</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td><div><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructInvalid(WbLocationConstantTest.java:71)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace147623131", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace147623131'><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructInvalid(WbLocationConstantTest.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.constructNotNumber()'><b>constructNotNumber</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td><div><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructNotNumber(WbLocationConstantTest.java:77)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1929506494", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1929506494'><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructNotNumber(WbLocationConstantTest.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.constructtooManyParts()'><b>constructtooManyParts</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td><div><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructtooManyParts(WbLocationConstantTest.java:83)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace370843722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace370843722'><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstant.&lt;init&gt;(WbLocationConstant.java:54)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.constructtooManyParts(WbLocationConstantTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printDay()'><b>printDay</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printFullQuantity()'><b>printFullQuantity</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printGlobeCoordinate()'><b>printGlobeCoordinate</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printItemId()'><b>printItemId</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printMonolingualTextValue()'><b>printMonolingualTextValue</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printNewItemId()'><b>printNewItemId</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printPropertyId()'><b>printPropertyId</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printQuantityValueWithBounds()'><b>printQuantityValueWithBounds</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printQuantityValueWithUnit()'><b>printQuantityValueWithUnit</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printSimpleQuantityValue()'><b>printSimpleQuantityValue</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printString()'><b>printString</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QSValuePrinterTest.printYear()'><b>printYear</b><br>Test class: org.openrefine.wikidata.exporters.QSValuePrinterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QSValuePrinterTest@782859e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testAddStatements()'><b>testAddStatements</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningTest.testAggregate()'><b>testAggregate</b><br>Test class: org.openrefine.wikidata.qa.QAWarningTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningTest@5db6b9cd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemDocumentExprTest.testAliasSkipped()'><b>testAliasSkipped</b><br>Test class: org.openrefine.wikidata.schema.WbItemDocumentExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemDocumentExprTest@5c86a017</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest.testAllowed()'><b>testAllowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest@7857fe2</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testAllowedQualifiers()'><b>testAllowedQualifiers</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>2</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest.testAllowedValue()'><b>testAllowedValue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest@5340477f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest.testAllowedValueFailing()'><b>testAllowedValueFailing</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest@5340477f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testBoundsAllowed()'><b>testBoundsAllowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testBoundsDisallowed()'><b>testBoundsDisallowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningTest.testCompare()'><b>testCompare</b><br>Test class: org.openrefine.wikidata.qa.QAWarningTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningTest@5db6b9cd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testConstructOverridingLabels()'><b>testConstructOverridingLabels</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest.testConstructor()'><b>testConstructor</b><br>Test class: org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: An edit summary must be provided.
+	at org.apache.commons.lang.Validate.notEmpty(Validate.java:361)
+	at org.openrefine.wikidata.operations.PerformWikibaseEditsOperation.&lt;init&gt;(PerformWikibaseEditsOperation.java:74)
+	at org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest.testConstructor(PerformWikibaseEditsOperationTest.java:61)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2016142571", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2016142571'><pre>java.lang.IllegalArgumentException: An edit summary must be provided.
+	at org.apache.commons.lang.Validate.notEmpty(Validate.java:361)
+	at org.openrefine.wikidata.operations.PerformWikibaseEditsOperation.&lt;init&gt;(PerformWikibaseEditsOperation.java:74)
+	at org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest.testConstructor(PerformWikibaseEditsOperationTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest@1b1cfb87</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testContributeToAlias()'><b>testContributeToAlias</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testContributeToDescription()'><b>testContributeToDescription</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testContributeToLabel()'><b>testContributeToLabel</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningStoreTest.testCount()'><b>testCount</b><br>Test class: org.openrefine.wikidata.qa.QAWarningStoreTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningStoreTest@6f43c82</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementGroupExprTest.testCreate()'><b>testCreate</b><br>Test class: org.openrefine.wikidata.schema.WbStatementGroupExprTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Must be true
+	at org.jsoup.helper.Validate.isTrue(Validate.java:35)
+	at org.openrefine.wikidata.schema.WbStatementGroupExpr.&lt;init&gt;(WbStatementGroupExpr.java:54)
+	at org.openrefine.wikidata.schema.WbStatementGroupExprTest.testCreate(WbStatementGroupExprTest.java:73)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace248146548", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace248146548'><pre>java.lang.IllegalArgumentException: Must be true
+	at org.jsoup.helper.Validate.isTrue(Validate.java:35)
+	at org.openrefine.wikidata.schema.WbStatementGroupExpr.&lt;init&gt;(WbStatementGroupExpr.java:54)
+	at org.openrefine.wikidata.schema.WbStatementGroupExprTest.testCreate(WbStatementGroupExprTest.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementGroupExprTest@7d3e8655</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testCreateWithoutSubject()'><b>testCreateWithoutSubject</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Object must not be null
+	at org.jsoup.helper.Validate.notNull(Validate.java:16)
+	at org.openrefine.wikidata.updates.ItemUpdateBuilder.&lt;init&gt;(ItemUpdateBuilder.java:62)
+	at org.openrefine.wikidata.updates.ItemUpdateTest.testCreateWithoutSubject(ItemUpdateTest.java:81)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace441260727", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace441260727'><pre>java.lang.IllegalArgumentException: Object must not be null
+	at org.jsoup.helper.Validate.notNull(Validate.java:16)
+	at org.openrefine.wikidata.updates.ItemUpdateBuilder.&lt;init&gt;(ItemUpdateBuilder.java:62)
+	at org.openrefine.wikidata.updates.ItemUpdateTest.testCreateWithoutSubject(ItemUpdateTest.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testCreation()'><b>testCreation</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.LoginCommandTest.testCsrfProtection()'><b>testCsrfProtection</b><br>Test class: org.openrefine.wikidata.commands.LoginCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.LoginCommandTest@5a5a729f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest.testCsrfProtection()'><b>testCsrfProtection</b><br>Test class: org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest@16150369</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testDeleteStatement()'><b>testDeleteStatement</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testDeleteStatements()'><b>testDeleteStatements</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest.testDeletedStatements()'><b>testDeletedStatements</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest@29d80d2b</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WikibaseSchemaTest.testDeserialize()'><b>testDeserialize</b><br>Test class: org.openrefine.wikidata.schema.WikibaseSchemaTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WikibaseSchemaTest@169bb4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WikibaseSchemaTest.testDeserializeEmpty()'><b>testDeserializeEmpty</b><br>Test class: org.openrefine.wikidata.schema.WikibaseSchemaTest</td>
+<td><div><pre>com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.openrefine.wikidata.schema.WbStatementGroupExpr`, problem: Object must not be null
+ at [Source: (String)&quot;{&quot;itemDocuments&quot;:[{&quot;statementGroups&quot;:[{&quot;statements&quot;:[]}],&quot;nameDescs&quot;:[]}],&quot;wikibasePrefix&quot;:&quot;http://www.wikidata.org/entity/&quot;}&quot;; line: 1, column: 55] (through reference chain: org.openrefine.wikidata.schema.WikibaseSchema[&quot;itemDocuments&quot;]-&gt;java.util.ArrayList[0]-&gt;org.openrefine.wikidata.schema.WbItemDocumentExpr[&quot;statementGroups&quot;]-&gt;java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1608)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.wrapAsJsonMappingException(StdValueInstantiator.java:484)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.rewrapCtorProblem(StdValueInstantiator.java:503)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromObjectWith(StdValueInstantiator.java:285)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator.createFromObjectWith(ValueInstantiator.java:229)
+	at com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator.build(PropertyBasedCreator.java:195)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:488)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:530)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:528)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:417)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:530)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:528)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:417)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4014)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3005)
+	at org.openrefine.wikidata.schema.WikibaseSchema.reconstruct(WikibaseSchema.java:182)
+	at org.openrefine.wikidata.schema.WikibaseSchemaTest.testDeserializeEmpty(WikibaseSchemaTest.java:130)
+Caused by: java.lang.IllegalArgumentException: Object must not be null
+	at org.jsoup.helper.Validate.notNull(Validate.java:16)
+	at org.openrefine.wikidata.schema.WbStatementGroupExpr.&lt;init&gt;(WbStatementGroupExpr.java:51)
+	at com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.call(AnnotatedConstructor.java:124)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromObjectWith(StdValueInstantiator.java:283)
+	... 56 more
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1967667267", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1967667267'><pre>com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.openrefine.wikidata.schema.WbStatementGroupExpr`, problem: Object must not be null
+ at [Source: (String)&quot;{&quot;itemDocuments&quot;:[{&quot;statementGroups&quot;:[{&quot;statements&quot;:[]}],&quot;nameDescs&quot;:[]}],&quot;wikibasePrefix&quot;:&quot;http://www.wikidata.org/entity/&quot;}&quot;; line: 1, column: 55] (through reference chain: org.openrefine.wikidata.schema.WikibaseSchema[&quot;itemDocuments&quot;]-&gt;java.util.ArrayList[0]-&gt;org.openrefine.wikidata.schema.WbItemDocumentExpr[&quot;statementGroups&quot;]-&gt;java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1608)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.wrapAsJsonMappingException(StdValueInstantiator.java:484)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.rewrapCtorProblem(StdValueInstantiator.java:503)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromObjectWith(StdValueInstantiator.java:285)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator.createFromObjectWith(ValueInstantiator.java:229)
+	at com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator.build(PropertyBasedCreator.java:195)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:488)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:530)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:528)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:417)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:530)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:528)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:417)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1287)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:326)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4014)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3005)
+	at org.openrefine.wikidata.schema.WikibaseSchema.reconstruct(WikibaseSchema.java:182)
+	at org.openrefine.wikidata.schema.WikibaseSchemaTest.testDeserializeEmpty(WikibaseSchemaTest.java:130)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.lang.IllegalArgumentException: Object must not be null
+	at org.jsoup.helper.Validate.notNull(Validate.java:16)
+	at org.openrefine.wikidata.schema.WbStatementGroupExpr.&lt;init&gt;(WbStatementGroupExpr.java:51)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.call(AnnotatedConstructor.java:124)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromObjectWith(StdValueInstantiator.java:283)
+	... 56 more
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WikibaseSchemaTest@169bb4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest.testDisallowed()'><b>testDisallowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.EntityTypeScrutinizerTest@7857fe2</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest.testDisallowedQualifier()'><b>testDisallowedQualifier</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest@446a1e84</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest.testDisallowedValue()'><b>testDisallowedValue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest@5340477f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest.testDisallowedValueFailing()'><b>testDisallowedValueFailing</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest@5340477f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testDistinctValues()'><b>testDistinctValues</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>1</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testDoubleInteger()'><b>testDoubleInteger</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testDoubleWhitespace()'><b>testDoubleWhitespace</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest.testDuplicateWhitespace()'><b>testDuplicateWhitespace</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest@387a8303</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringConstantTest.testEmpty()'><b>testEmpty</b><br>Test class: org.openrefine.wikidata.schema.WbStringConstantTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: The validated expression is false
+	at org.apache.commons.lang.Validate.isTrue(Validate.java:179)
+	at org.openrefine.wikidata.schema.WbStringConstant.&lt;init&gt;(WbStringConstant.java:40)
+	at org.openrefine.wikidata.schema.WbStringConstantTest.testEmpty(WbStringConstantTest.java:30)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace185674515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace185674515'><pre>java.lang.IllegalArgumentException: The validated expression is false
+	at org.apache.commons.lang.Validate.isTrue(Validate.java:179)
+	at org.openrefine.wikidata.schema.WbStringConstant.&lt;init&gt;(WbStringConstant.java:40)
+	at org.openrefine.wikidata.schema.WbStringConstantTest.testEmpty(WbStringConstantTest.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringConstantTest@7dfb0c0f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testEmpty()'><b>testEmpty</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testEmpty()'><b>testEmpty</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest.testEmptyItem()'><b>testEmptyItem</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest@29d80d2b</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testEmptyLanguageCode()'><b>testEmptyLanguageCode</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testEmptyText()'><b>testEmptyText</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testEquality()'><b>testEquality</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemConstantTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbItemConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemConstantTest@475c9c31</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementGroupExprTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbStatementGroupExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementGroupExprTest@7d3e8655</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WikibaseSchemaTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WikibaseSchemaTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WikibaseSchemaTest@169bb4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemDocumentExprTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbItemDocumentExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemDocumentExprTest@5c86a017</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringConstantTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbStringConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringConstantTest@7dfb0c0f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbPropConstantTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbPropConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbPropConstantTest@6a4f1a55</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbReferenceExprTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbReferenceExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbReferenceExprTest@2584b82d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbSnakExprTest.testEvaluate()'><b>testEvaluate</b><br>Test class: org.openrefine.wikidata.schema.WbSnakExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbSnakExprTest@7bbc8656</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testEvaluateConstant()'><b>testEvaluateConstant</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WikibaseSchemaTest.testEvaluateRespectsFacets()'><b>testEvaluateRespectsFacets</b><br>Test class: org.openrefine.wikidata.schema.WikibaseSchemaTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WikibaseSchemaTest@169bb4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testEvaluateVariable()'><b>testEvaluateVariable</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testEvaluateWithConstant()'><b>testEvaluateWithConstant</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbReferenceExprTest.testEvaluateWithOneSkip()'><b>testEvaluateWithOneSkip</b><br>Test class: org.openrefine.wikidata.schema.WbReferenceExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbReferenceExprTest@2584b82d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.testEvaluateWithPrecision()'><b>testEvaluateWithPrecision</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testEvaluateWithoutQualifier()'><b>testEvaluateWithoutQualifier</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testEvaluateWithoutQualifierAndReference()'><b>testEvaluateWithoutQualifierAndReference</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testEvaluateWithoutReference()'><b>testEvaluateWithoutReference</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageConstantTest.testEvaluation()'><b>testEvaluation</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageConstantTest@5276d6ee</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testExponent()'><b>testExponent</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.PointerExtractorTest.testExtractDatavalues()'><b>testExtractDatavalues</b><br>Test class: org.openrefine.wikidata.updates.scheduler.PointerExtractorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.PointerExtractorTest@3aa078fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.PointerExtractorTest.testExtractEntityId()'><b>testExtractEntityId</b><br>Test class: org.openrefine.wikidata.updates.scheduler.PointerExtractorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.PointerExtractorTest@3aa078fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testFractionalAllowed()'><b>testFractionalAllowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testFractionalDisallowed()'><b>testFractionalDisallowed</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.ExpressionContextTest.testGetCellByColumnName()'><b>testGetCellByColumnName</b><br>Test class: org.openrefine.wikidata.schema.ExpressionContextTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.ExpressionContextTest@7eecb5b8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testGetContentType()'><b>testGetContentType</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testGetFormatConstraint()'><b>testGetFormatConstraint</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>1</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetId()'><b>testGetId</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testGetInverseConstraint()'><b>testGetInverseConstraint</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetIri()'><b>testGetIri</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetLabel()'><b>testGetLabel</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetRecon()'><b>testGetRecon</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.ExpressionContextTest.testGetRowId()'><b>testGetRowId</b><br>Test class: org.openrefine.wikidata.schema.ExpressionContextTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.ExpressionContextTest@7eecb5b8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetSiteIri()'><b>testGetSiteIri</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testGetTypes()'><b>testGetTypes</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testGetters()'><b>testGetters</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest.testGoodEdit()'><b>testGoodEdit</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest@446a1e84</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest.testGoodNewItem()'><b>testGoodNewItem</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest@29d80d2b</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testGoodUnit()'><b>testGoodUnit</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testGroupBySubject()'><b>testGroupBySubject</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testHashCode()'><b>testHashCode</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testImpossibleForQS()'><b>testImpossibleForQS</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td><div><pre>org.openrefine.wikidata.updates.scheduler.ImpossibleSchedulingException
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateScheduler.splitUpdate(QuickStatementsUpdateScheduler.java:91)
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateScheduler.schedule(QuickStatementsUpdateScheduler.java:119)
+	at org.openrefine.wikidata.updates.scheduler.UpdateSchedulerTest.schedule(UpdateSchedulerTest.java:60)
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testImpossibleForQS(QuickStatementsUpdateSchedulerTest.java:62)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1684580278", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1684580278'><pre>org.openrefine.wikidata.updates.scheduler.ImpossibleSchedulingException
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateScheduler.splitUpdate(QuickStatementsUpdateScheduler.java:91)
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateScheduler.schedule(QuickStatementsUpdateScheduler.java:119)
+	at org.openrefine.wikidata.updates.scheduler.UpdateSchedulerTest.schedule(UpdateSchedulerTest.java:60)
+	at org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testImpossibleForQS(QuickStatementsUpdateSchedulerTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testImpossibleScheduling()'><b>testImpossibleScheduling</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest.testIncompleteMatch()'><b>testIncompleteMatch</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest@6f15d60e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testInteger()'><b>testInteger</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testInteger()'><b>testInteger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testInvalid()'><b>testInvalid</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: invalid format
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testInvalid(WbDateConstantTest.java:105)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1052658892", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1052658892'><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: invalid format
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testInvalid(WbDateConstantTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testInvalidAmountWithUnit()'><b>testInvalidAmountWithUnit</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testInvalidAmountWithoutUnit()'><b>testInvalidAmountWithoutUnit</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testInvalidCalendar()'><b>testInvalidCalendar</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: 2018-01-02_P234
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testInvalidCalendar(WbDateConstantTest.java:115)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace671959170", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace671959170'><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: 2018-01-02_P234
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testInvalidCalendar(WbDateConstantTest.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageVariableTest.testInvalidLanguageCode()'><b>testInvalidLanguageCode</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageVariableTest@71687585</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testInvalidLanguageCode()'><b>testInvalidLanguageCode</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest.testInvalidSchema()'><b>testInvalidSchema</b><br>Test class: org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest@4b520ea8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest.testInvalidSchema()'><b>testInvalidSchema</b><br>Test class: org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest@16150369</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testInvalidSpace()'><b>testInvalidSpace</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testInvalidUnitWithAmount()'><b>testInvalidUnitWithAmount</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testIsEmpty()'><b>testIsEmpty</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testIsNew()'><b>testIsNew</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testIsNew()'><b>testIsNew</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testIsNull()'><b>testIsNull</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testLeadingWhitespace()'><b>testLeadingWhitespace</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest.testLoadChange()'><b>testLoadChange</b><br>Test class: org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest@1b1cfb87</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest.testLoadChange()'><b>testLoadChange</b><br>Test class: org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest@821330f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testMandatoryQualifiers()'><b>testMandatoryQualifiers</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.ReconEntityRewriterTest.testMatched()'><b>testMatched</b><br>Test class: org.openrefine.wikidata.editing.ReconEntityRewriterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.ReconEntityRewriterTest@3932c79a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningStoreTest.testMaxSeverity()'><b>testMaxSeverity</b><br>Test class: org.openrefine.wikidata.qa.QAWarningStoreTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningStoreTest@6f43c82</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMerge()'><b>testMerge</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testMerge()'><b>testMerge</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testMerge()'><b>testMerge</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeDescriptionsIfNew()'><b>testMergeDescriptionsIfNew</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeDescriptionsIfNewOverriding()'><b>testMergeDescriptionsIfNewOverriding</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeDescriptionsIfNewOverriding2()'><b>testMergeDescriptionsIfNewOverriding2</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeLabels()'><b>testMergeLabels</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeLabelsIfNew()'><b>testMergeLabelsIfNew</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeLabelsIfNewOverriding()'><b>testMergeLabelsIfNewOverriding</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testMergeLabelsIfNewOverriding2()'><b>testMergeLabelsIfNewOverriding2</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testMergeNew()'><b>testMergeNew</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testMergeNew()'><b>testMergeNew</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testMinutesISO()'><b>testMinutesISO</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest.testMissingQualifier()'><b>testMissingQualifier</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QualifierCompatibilityScrutinizerTest@446a1e84</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testMixedUpdate()'><b>testMixedUpdate</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest.testMonolingualTextValue()'><b>testMonolingualTextValue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest@387a8303</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.EditBatchProcessorTest.testMultipleBatches()'><b>testMultipleBatches</b><br>Test class: org.openrefine.wikidata.editing.EditBatchProcessorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.EditBatchProcessorTest@6b09fb41</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest.testMultipleIssues()'><b>testMultipleIssues</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest@387a8303</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testNameDesc()'><b>testNameDesc</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.EditBatchProcessorTest.testNewItem()'><b>testNewItem</b><br>Test class: org.openrefine.wikidata.editing.EditBatchProcessorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.EditBatchProcessorTest@6b09fb41</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testNewItemCell()'><b>testNewItemCell</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testNewItemMentioned()'><b>testNewItemMentioned</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testNewItemMentioned()'><b>testNewItemMentioned</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testNewItemNotMentioned()'><b>testNewItemNotMentioned</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testNewItemNotMentioned()'><b>testNewItemNotMentioned</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest.testNoConstraint()'><b>testNoConstraint</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedValuesScrutinizerTest@5340477f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.LoginCommandTest.testNoCredentials()'><b>testNoCredentials</b><br>Test class: org.openrefine.wikidata.commands.LoginCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.LoginCommandTest@5a5a729f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest.testNoIssue()'><b>testNoIssue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest@387a8303</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest.testNoIssue()'><b>testNoIssue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest@7139992f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest.testNoIssue()'><b>testNoIssue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest@6f15d60e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testNoNewItem()'><b>testNoNewItem</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest.testNoProblem()'><b>testNoProblem</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest@47caedad</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest.testNoProblem()'><b>testNoProblem</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest@2657d4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest.testNoSchema()'><b>testNoSchema</b><br>Test class: org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest@4b520ea8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest.testNoSchema()'><b>testNoSchema</b><br>Test class: org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest@16150369</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testNoSchema()'><b>testNoSchema</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.SchemaExporterTest.testNoSchema()'><b>testNoSchema</b><br>Test class: org.openrefine.wikidata.exporters.SchemaExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.SchemaExporterTest@34bde49d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest.testNoSymmetricClosure()'><b>testNoSymmetricClosure</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest@1be2019a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testNoUnit()'><b>testNoUnit</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbReferenceExprTest.testNoValidSnak()'><b>testNoValidSnak</b><br>Test class: org.openrefine.wikidata.schema.WbReferenceExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbReferenceExprTest@2584b82d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.ExpressionContextTest.testNonExistentColumn()'><b>testNonExistentColumn</b><br>Test class: org.openrefine.wikidata.schema.ExpressionContextTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.ExpressionContextTest@7eecb5b8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest.testNonNull()'><b>testNonNull</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest@58e1d9d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest.testNonPrintableChars()'><b>testNonPrintableChars</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.WhitespaceScrutinizerTest@387a8303</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageConstantTest.testNormalizeLanguageCode()'><b>testNormalizeLanguageCode</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageConstantTest@5276d6ee</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.ItemUpdateTest.testNormalizeTerms()'><b>testNormalizeTerms</b><br>Test class: org.openrefine.wikidata.updates.ItemUpdateTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.ItemUpdateTest@1f9e9475</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.ReconEntityRewriterTest.testNotCreatedYet()'><b>testNotCreatedYet</b><br>Test class: org.openrefine.wikidata.editing.ReconEntityRewriterTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Trying to rewrite an update where a new item was not created yet.
+	at org.openrefine.wikidata.editing.ReconEntityRewriter.copy(ReconEntityRewriter.java:82)
+	at org.openrefine.wikidata.editing.ReconEntityRewriterTest.testNotCreatedYet(ReconEntityRewriterTest.java:51)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace421632334", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace421632334'><pre>java.lang.IllegalArgumentException: Trying to rewrite an update where a new item was not created yet.
+	at org.openrefine.wikidata.editing.ReconEntityRewriter.copy(ReconEntityRewriter.java:82)
+	at org.openrefine.wikidata.editing.ReconEntityRewriterTest.testNotCreatedYet(ReconEntityRewriterTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.ReconEntityRewriterTest@3932c79a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest.testNotRestricted()'><b>testNotRestricted</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest@2657d4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest.testNull()'><b>testNull</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest@58e1d9d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testNumber()'><b>testNumber</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testOnlyOneValue()'><b>testOnlyOneValue</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testOptionalNameDesc()'><b>testOptionalNameDesc</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testOrderPreserved()'><b>testOrderPreserved</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.testParseInvalid()'><b>testParseInvalid</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td><div><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.testParseInvalid(WbLocationConstantTest.java:53)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1755811644", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1755811644'><pre>java.text.ParseException: Invalid globe coordinates
+	at org.openrefine.wikidata.schema.WbLocationConstant.parse(WbLocationConstant.java:84)
+	at org.openrefine.wikidata.schema.WbLocationConstantTest.testParseInvalid(WbLocationConstantTest.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testPartlyValid()'><b>testPartlyValid</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td><div><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: 2018-partly valid
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testPartlyValid(WbDateConstantTest.java:110)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1760378672", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1760378672'><pre>java.lang.IllegalArgumentException: Invalid datestamp provided: 2018-partly valid
+	at org.openrefine.wikidata.schema.WbDateConstant.setOrigDatestamp(WbDateConstant.java:178)
+	at org.openrefine.wikidata.schema.WbDateConstant.&lt;init&gt;(WbDateConstant.java:83)
+	at org.openrefine.wikidata.schema.WbDateConstantTest.testPartlyValid(WbDateConstantTest.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testQualifier()'><b>testQualifier</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testReconciledCell()'><b>testReconciledCell</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest.testReconstruct()'><b>testReconstruct</b><br>Test class: org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.operations.PerformWikibaseEditsOperationTest@1b1cfb87</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest.testReconstruct()'><b>testReconstruct</b><br>Test class: org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.operations.SaveWikibaseSchemaOperationTest@821330f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.NewItemLibraryTest.testRetrieveItem()'><b>testRetrieveItem</b><br>Test class: org.openrefine.wikidata.editing.NewItemLibraryTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.NewItemLibraryTest@624ea235</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.ReconEntityRewriterTest.testRewriteUpdate()'><b>testRewriteUpdate</b><br>Test class: org.openrefine.wikidata.editing.ReconEntityRewriterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.ReconEntityRewriterTest@3932c79a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest.testScrutinizeCloseValue()'><b>testScrutinizeCloseValue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest@210ab13f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest.testScrutinizeEarlyDay()'><b>testScrutinizeEarlyDay</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest@210ab13f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest.testScrutinizeEarlyYear()'><b>testScrutinizeEarlyYear</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest@210ab13f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest.testScrutinizeRecentValue()'><b>testScrutinizeRecentValue</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.CalendarScrutinizerTest@210ab13f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testSelfEditOnNewITem()'><b>testSelfEditOnNewITem</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageConstantTest.testSerialization()'><b>testSerialization</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageConstantTest@5276d6ee</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationConstantTest.testSerialization()'><b>testSerialization</b><br>Test class: org.openrefine.wikidata.schema.WbLocationConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationConstantTest@1807f5a7</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testSerialization()'><b>testSerialization</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningStoreTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.qa.QAWarningStoreTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningStoreTest@6f43c82</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemConstantTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbItemConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemConstantTest@475c9c31</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementGroupExprTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbStatementGroupExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementGroupExprTest@7d3e8655</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WikibaseSchemaTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WikibaseSchemaTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WikibaseSchemaTest@169bb4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.NewItemLibraryTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.editing.NewItemLibraryTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.NewItemLibraryTest@624ea235</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.QAWarningTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.qa.QAWarningTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.QAWarningTest@5db6b9cd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemDocumentExprTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbItemDocumentExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemDocumentExprTest@5c86a017</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringConstantTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbStringConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringConstantTest@7dfb0c0f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageVariableTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageVariableTest@71687585</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbPropConstantTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbPropConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbPropConstantTest@6a4f1a55</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbReferenceExprTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbReferenceExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbReferenceExprTest@2584b82d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbSnakExprTest.testSerialize()'><b>testSerialize</b><br>Test class: org.openrefine.wikidata.schema.WbSnakExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbSnakExprTest@7bbc8656</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.exporters.QuickStatementsExporterTest.testSimpleProject()'><b>testSimpleProject</b><br>Test class: org.openrefine.wikidata.exporters.QuickStatementsExporterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.exporters.QuickStatementsExporterTest@23f5b5dc</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testSimpleString()'><b>testSimpleString</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.WikidataConstraintFetcherTests.testSingleValue()'><b>testSingleValue</b><br>Test class: org.openrefine.wikidata.qa.WikidataConstraintFetcherTests</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.WikidataConstraintFetcherTests@28cda624</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementExprTest.testSkip()'><b>testSkip</b><br>Test class: org.openrefine.wikidata.schema.WbStatementExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementExprTest@6933b6c6</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStatementGroupExprTest.testSkip()'><b>testSkip</b><br>Test class: org.openrefine.wikidata.schema.WbStatementGroupExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStatementGroupExprTest@7d3e8655</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testSkipped()'><b>testSkipped</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbNameDescExprTest.testSkipped()'><b>testSkipped</b><br>Test class: org.openrefine.wikidata.schema.WbNameDescExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbNameDescExprTest@4dc27487</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.PointerExtractorTest.testSnak()'><b>testSnak</b><br>Test class: org.openrefine.wikidata.updates.scheduler.PointerExtractorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.PointerExtractorTest@3aa078fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.PointerExtractorTest.testSnakGroup()'><b>testSnakGroup</b><br>Test class: org.openrefine.wikidata.updates.scheduler.PointerExtractorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.PointerExtractorTest@3aa078fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest.testSplitUpdate()'><b>testSplitUpdate</b><br>Test class: org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.QuickStatementsUpdateSchedulerTest@d23e042</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.PointerExtractorTest.testStatement()'><b>testStatement</b><br>Test class: org.openrefine.wikidata.updates.scheduler.PointerExtractorTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.PointerExtractorTest@3aa078fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemDocumentExprTest.testStatementSkipped()'><b>testStatementSkipped</b><br>Test class: org.openrefine.wikidata.schema.WbItemDocumentExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemDocumentExprTest@5c86a017</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.ReconEntityRewriterTest.testSubjectNotRewriten()'><b>testSubjectNotRewriten</b><br>Test class: org.openrefine.wikidata.editing.ReconEntityRewriterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.ReconEntityRewriterTest@3932c79a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemDocumentExprTest.testSubjectSkipped()'><b>testSubjectSkipped</b><br>Test class: org.openrefine.wikidata.schema.WbItemDocumentExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemDocumentExprTest@5c86a017</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.ReconEntityRewriterTest.testSuccessfulRewrite()'><b>testSuccessfulRewrite</b><br>Test class: org.openrefine.wikidata.editing.ReconEntityRewriterTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.ReconEntityRewriterTest@3932c79a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest.testSymmetric()'><b>testSymmetric</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest@1be2019a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest.testToString()'><b>testToString</b><br>Test class: org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.entityvalues.ReconEntityIdValueTest@1500b2f3</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateConstantTest.testToday()'><b>testToday</b><br>Test class: org.openrefine.wikidata.schema.WbDateConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateConstantTest@126253fd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringVariableTest.testTrailingWhitespace()'><b>testTrailingWhitespace</b><br>Test class: org.openrefine.wikidata.schema.WbStringVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringVariableTest@626abbd0</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testTrailingZeros()'><b>testTrailingZeros</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.SelfReferentialScrutinizerTest@47caedad</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.UnsourcedScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.UnsourcedScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.UnsourcedScrutinizerTest@69504ae9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.SingleValueScrutinizerTest@7139992f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.DistinctValuesScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.DistinctValuesScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.DistinctValuesScrutinizerTest@20b2475a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.FormatScrutinizerTest@6f15d60e</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.InverseConstaintScrutinizerTest@1be2019a</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NewItemScrutinizerTest@29d80d2b</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest.testTrigger()'><b>testTrigger</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.NoEditsMadeScrutinizerTest@58e1d9d</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest.testTriggerMainSnak()'><b>testTriggerMainSnak</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest@2657d4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest.testTriggerReference()'><b>testTriggerReference</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.RestrictedPositionScrutinizerTest@2657d4dd</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbStringConstantTest.testTrim()'><b>testTrim</b><br>Test class: org.openrefine.wikidata.schema.WbStringConstantTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbStringConstantTest@7dfb0c0f</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbMonolingualExprTest.testTrim()'><b>testTrim</b><br>Test class: org.openrefine.wikidata.schema.WbMonolingualExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbMonolingualExprTest@7fb4f2a9</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testUnitForbidden()'><b>testUnitForbidden</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testUnitReqired()'><b>testUnitReqired</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testUnmatchedCell()'><b>testUnmatchedCell</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbItemVariableTest.testUnreconciledCell()'><b>testUnreconciledCell</b><br>Test class: org.openrefine.wikidata.schema.WbItemVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbItemVariableTest@5c7bfdc1</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest.testUpdateIsNotSplit()'><b>testUpdateIsNotSplit</b><br>Test class: org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.updates.scheduler.WikibaseAPIUpdateSchedulerTest@46d59067</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.editing.NewItemLibraryTest.testUpdateReconciledCells()'><b>testUpdateReconciledCells</b><br>Test class: org.openrefine.wikidata.editing.NewItemLibraryTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.editing.NewItemLibraryTest@624ea235</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testValidFormat()'><b>testValidFormat</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLanguageVariableTest.testValidLanguageCode()'><b>testValidLanguageCode</b><br>Test class: org.openrefine.wikidata.schema.WbLanguageVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLanguageVariableTest@71687585</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest.testValidSchema()'><b>testValidSchema</b><br>Test class: org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest</td>
+<td></td>
+<td>4</td>
+<td>org.openrefine.wikidata.commands.PreviewWikibaseSchemaCommandTest@4b520ea8</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest.testValidSchema()'><b>testValidSchema</b><br>Test class: org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.commands.SaveWikibaseSchemaCommandTest@16150369</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbDateVariableTest.testWhitespace()'><b>testWhitespace</b><br>Test class: org.openrefine.wikidata.schema.WbDateVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbDateVariableTest@57db2b13</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testWhitespace()'><b>testWhitespace</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testWithComma()'><b>testWithComma</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbLocationVariableTest.testWithSlash()'><b>testWithSlash</b><br>Test class: org.openrefine.wikidata.schema.WbLocationVariableTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbLocationVariableTest@1b919693</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testWithUnit()'><b>testWithUnit</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.schema.WbQuantityExprTest.testWithoutUnit()'><b>testWithoutUnit</b><br>Test class: org.openrefine.wikidata.schema.WbQuantityExprTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.schema.WbQuantityExprTest@7dfd3c81</td></tr>
+<tr>
+<td title='org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest.testWrongUnit()'><b>testWrongUnit</b><br>Test class: org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest</td>
+<td></td>
+<td>0</td>
+<td>org.openrefine.wikidata.qa.scrutinizers.QuantityScrutinizerTest@4f0f2942</td></tr>
+</table><p>
+</body>
+</html>

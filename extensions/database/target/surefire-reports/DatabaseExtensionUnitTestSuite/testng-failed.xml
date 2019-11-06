@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [DatabaseExtensionUnitTestSuite]">
+  <parameter name="mySqlDbPort" value="3306"/>
+  <parameter name="mySqlTestTable" value="test_table"/>
+  <parameter name="mySqlDbPassword" value=""/>
+  <parameter name="pgSqlDbName" value="test_db"/>
+  <parameter name="pgSqlDbPassword" value=""/>
+  <parameter name="mariaDbUser" value="root"/>
+  <parameter name="mariaDbPassword" value=""/>
+  <parameter name="pgSqlDbUser" value="postgres"/>
+  <parameter name="mariaDbName" value="test_db"/>
+  <parameter name="mySqlDbUser" value="root"/>
+  <parameter name="mariaDbHost" value="127.0.0.1"/>
+  <parameter name="mariaDbTestTable" value="test_table"/>
+  <parameter name="pgSqlDbPort" value="5432"/>
+  <parameter name="mySqlDbName" value="test_db"/>
+  <parameter name="mySqlDbHost" value="127.0.0.1"/>
+  <parameter name="mariadbDbPort" value="3306"/>
+  <parameter name="pgSqlTestTable" value="test_table"/>
+  <parameter name="pgSqlDbHost" value="127.0.0.1"/>
+  <test name="DatabaseExtensionUnitTest">
+    <groups>
+      <run>
+        <exclude name="requiresMySQL"/>
+        <exclude name="requiresPgSQL"/>
+        <exclude name="requiresMariaDB"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="org.openrefine.wikidata.*"/>
+    </packages>
+  </test> <!-- DatabaseExtensionUnitTest -->
+</suite> <!-- Failed suite [DatabaseExtensionUnitTestSuite] -->

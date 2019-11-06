@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [GData extension]">
+  <test name="tests">
+    <groups>
+      <run>
+        <exclude name="broken"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.google.refine.extension.gdata.*"/>
+    </packages>
+    <classes>
+      <class name="com.google.refine.extension.gdata.UploadCommandTest"/>
+      <class name="com.google.refine.extension.gdata.DeAuthorizeCommand"/>
+      <class name="com.google.refine.extension.gdata.FusionTableHandler"/>
+      <class name="com.google.refine.extension.gdata.FusionTableImporter$FTColumnData"/>
+      <class name="com.google.refine.extension.gdata.FusionTableImporter$FTColumnType"/>
+      <class name="com.google.refine.extension.gdata.FusionTableImporter$FusionTableBatchRowReader"/>
+      <class name="com.google.refine.extension.gdata.FusionTableImporter"/>
+      <class name="com.google.refine.extension.gdata.FusionTableSerializer"/>
+      <class name="com.google.refine.extension.gdata.GDataImporter$WorksheetBatchRowReader"/>
+      <class name="com.google.refine.extension.gdata.GDataImporter"/>
+      <class name="com.google.refine.extension.gdata.GDataImportingController$1"/>
+      <class name="com.google.refine.extension.gdata.GDataImportingController"/>
+      <class name="com.google.refine.extension.gdata.GoogleAPIExtension$1"/>
+      <class name="com.google.refine.extension.gdata.GoogleAPIExtension$2"/>
+      <class name="com.google.refine.extension.gdata.GoogleAPIExtension"/>
+      <class name="com.google.refine.extension.gdata.SpreadsheetSerializer"/>
+      <class name="com.google.refine.extension.gdata.TokenCookie"/>
+      <class name="com.google.refine.extension.gdata.UploadCommand"/>
+    </classes>
+  </test> <!-- tests -->
+</suite> <!-- Failed suite [GData extension] -->

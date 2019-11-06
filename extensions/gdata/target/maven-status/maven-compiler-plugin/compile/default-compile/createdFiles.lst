@@ -1,0 +1,17 @@
+com\google\refine\extension\gdata\FusionTableHandler.class
+com\google\refine\extension\gdata\GDataImportingController$1.class
+com\google\refine\extension\gdata\TokenCookie.class
+com\google\refine\extension\gdata\FusionTableImporter$FTColumnType.class
+com\google\refine\extension\gdata\FusionTableSerializer.class
+com\google\refine\extension\gdata\GoogleAPIExtension.class
+com\google\refine\extension\gdata\FusionTableImporter$FusionTableBatchRowReader.class
+com\google\refine\extension\gdata\DeAuthorizeCommand.class
+com\google\refine\extension\gdata\SpreadsheetSerializer.class
+com\google\refine\extension\gdata\FusionTableImporter$FTColumnData.class
+com\google\refine\extension\gdata\GDataImporter$WorksheetBatchRowReader.class
+com\google\refine\extension\gdata\GDataImportingController.class
+com\google\refine\extension\gdata\GoogleAPIExtension$2.class
+com\google\refine\extension\gdata\FusionTableImporter.class
+com\google\refine\extension\gdata\GoogleAPIExtension$1.class
+com\google\refine\extension\gdata\UploadCommand.class
+com\google\refine\extension\gdata\GDataImporter.class
