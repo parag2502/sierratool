@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Jython extension" duration-ms="12641" started-at="2019-11-05T06:13:43Z" finished-at="2019-11-05T06:13:56Z">
+  <suite name="Jython extension" duration-ms="4389" started-at="2019-11-06T13:11:47Z" finished-at="2019-11-06T13:11:51Z">
     <groups>
     </groups>
-    <test name="tests" duration-ms="12641" started-at="2019-11-05T06:13:43Z" finished-at="2019-11-05T06:13:56Z">
+    <test name="tests" duration-ms="4389" started-at="2019-11-06T13:11:47Z" finished-at="2019-11-06T13:11:51Z">
       <class name="com.google.refine.jython.JythonEvaluableTest">
-        <test-method status="PASS" signature="testJythonConcurrent()[pri:0, instance:com.google.refine.jython.JythonEvaluableTest@51d9479c]" name="testJythonConcurrent" duration-ms="302" started-at="2019-11-05T11:43:56Z" finished-at="2019-11-05T11:43:56Z">
+        <test-method status="PASS" signature="testJythonConcurrent()[pri:0, instance:com.google.refine.jython.JythonEvaluableTest@3e0b1f03]" name="testJythonConcurrent" duration-ms="204" started-at="2019-11-06T18:41:51Z" finished-at="2019-11-06T18:41:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testJythonConcurrent -->
       </class> <!-- com.google.refine.jython.JythonEvaluableTest -->
       <class name="com.google.refine.jython.JythonAttributeTest">
-        <test-method status="PASS" signature="testWrappedObjectsHaveAttributes()[pri:0, instance:com.google.refine.jython.JythonAttributeTest@1c571162]" name="testWrappedObjectsHaveAttributes" duration-ms="12321" started-at="2019-11-05T11:43:43Z" finished-at="2019-11-05T11:43:56Z">
+        <test-method status="PASS" signature="testWrappedObjectsHaveAttributes()[pri:0, instance:com.google.refine.jython.JythonAttributeTest@2e03bb74]" name="testWrappedObjectsHaveAttributes" duration-ms="4167" started-at="2019-11-06T18:41:47Z" finished-at="2019-11-06T18:41:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWrappedObjectsHaveAttributes -->

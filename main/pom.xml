@@ -11,10 +11,9 @@
   <parent>
     <groupId>org.openrefine</groupId>
     <artifactId>openrefine</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
   </parent>
 
-  
   <properties>
     <jee.path>/</jee.path>
     <jee.port>3333</jee.port>

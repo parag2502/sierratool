@@ -132,7 +132,7 @@ function initializeUI(uiState) {
   $("#or-proj-facFil").text($.i18n('core-project/facet-filter'));
   $("#or-proj-undoRedo").text($.i18n('core-project/undo-redo'));
   $("#or-proj-ext").text($.i18n('core-project/extensions')+":");
-
+  $("#btn-data-quality-dashboard").text($.i18n('core-buttons/data-quality-dashboard'));
   $('#project-name-button').click(Refine._renameProject);
   $('#project-permalink-button').mouseenter(function() {
     this.href = Refine.getPermanentLink();
@@ -167,7 +167,7 @@ function initializeUI(uiState) {
 }
 
 Refine.setTitle = function(status) {
-  var title = theProject.metadata.name + " - OpenRefine";
+  var title = theProject.metadata.name + " - SierraTool";
   if (status) {
     title = status + " - " + title;
   }

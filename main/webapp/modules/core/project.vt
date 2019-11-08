@@ -76,7 +76,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           </div>
           <div bind="extensionBarDiv" id="extension-bar">
             <span hidden id="or-proj-ext"></span> <span hidden bind="menuContainer" id="extension-bar-menu-container"></span>
-            <button>Functional Integrity Check</button>
+            <button onClick="parent.location='dashboard.html'" id="btn-data-quality-dashboard"></button>
           </div>
         </div>
         <div bind="viewPanelDiv" id="view-panel"></div>

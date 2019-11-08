@@ -449,8 +449,8 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
 	      	if(duplicate)
 	      		break;	
 	      	}
-	      	
 	      }
+	    
 	      renderRow(tr, r, row, even);
 	      this.resizeAll();
   }
@@ -828,14 +828,30 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
           }
         }
       ]
-    }
+    },
+    {},
+    {
+        label: $.i18n('core-views/functional-integrity-check'),
+        id: "core/functional-integrity-check",
+        click: function() {
+               //TODO: FunctionalIntegrityCheck;
+        }
+    },
+    /*{},
+    {
+        label: $.i18n('core-views/check-duplicates'),
+        id: "core/check-duplicates",
+        click: function() {
+        	new CheckColumnDuplicatesDialog();
+        }
+    }*/
   ];
 
   for (var i = 0; i < DataTableView._extenders.length; i++) {
     DataTableView._extenders[i].call(null, this, menu);
   }
 
-  MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "120px", horizontal: false });
+  MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "160px", horizontal: false });
 };
 
 DataTableView.prototype._createSortingMenu = function(elmt) {

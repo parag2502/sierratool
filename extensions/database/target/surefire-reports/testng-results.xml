@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="DatabaseExtensionUnitTestSuite" duration-ms="6" started-at="2019-11-05T06:14:19Z" finished-at="2019-11-05T06:14:19Z">
+  <suite name="DatabaseExtensionUnitTestSuite" duration-ms="4" started-at="2019-11-06T13:12:11Z" finished-at="2019-11-06T13:12:11Z">
     <groups>
     </groups>
-    <test name="DatabaseExtensionUnitTest" duration-ms="6" started-at="2019-11-05T06:14:19Z" finished-at="2019-11-05T06:14:19Z">
+    <test name="DatabaseExtensionUnitTest" duration-ms="4" started-at="2019-11-06T13:12:11Z" finished-at="2019-11-06T13:12:11Z">
     </test> <!-- DatabaseExtensionUnitTest -->
   </suite> <!-- DatabaseExtensionUnitTestSuite -->
 </testng-results>

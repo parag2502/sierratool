@@ -733,5 +733,11 @@
     "core-buttons/match": "Match",
     "core-buttons/copy": "Copy",
     "core-buttons/transpose": "Transpose",
-    "core-buttons/apply-to-all": "Apply to All Identical Cells"
+    "core-buttons/apply-to-all": "Apply to All Identical Cells",
+    "core-views/functional-integrity-check": "Functional Integrity Check",
+    "core-views/check-duplicates": "Check Duplicates",
+    "core-dialogs/add-new-column-check-duplicates": "Add new column to check duplicates",
+    "core-dialogs/select-column-duplicates": "Select columns from here to check duplicates",
+    "core-dialogs/drop-column-duplicates": "Drop columns here to check duplicates",
+    "core-buttons/data-quality-dashboard": "Data Quality Dashboard"
 }

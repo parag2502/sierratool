@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>true</dontWrapJar>
   <headerType>console</headerType>
-  <jar>server\target\lib\openrefine-1.0-server.jar</jar>
+  <jar>server\target\lib\openrefine-1.1-server.jar</jar>
   <outfile>E:\Sierra\SierraTool\SourceCode\OpenRefine\packaging\target\openrefine.exe</outfile>
   <priority>normal</priority>
   <stayAlive>false</stayAlive>
@@ -23,11 +23,11 @@
   </jre>
   <versionInfo>
     <fileVersion>0.0.0.0</fileVersion>
-    <txtFileVersion>1.0</txtFileVersion>
+    <txtFileVersion>1.1</txtFileVersion>
     <fileDescription>openrefine</fileDescription>
     <copyright>Copyright (c) 2018 OpenRefine contributors, 2010 Google, Inc.</copyright>
     <productVersion>0.0.0.0</productVersion>
-    <txtProductVersion>1.0</txtProductVersion>
+    <txtProductVersion>1.1</txtProductVersion>
     <productName>OpenRefine</productName>
     <internalName>openrefine</internalName>
     <originalFilename>openrefine.exe</originalFilename>

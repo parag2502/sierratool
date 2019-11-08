@@ -190,6 +190,14 @@ DataTableColumnHeaderUI.prototype._createMenuForColumnHeader = function(elmt) {
       tooltip: $.i18n('core-views/reconcile-tooltip'),
       width: "170px",
       submenu: []
+    },
+    {},
+    {
+        label: $.i18n('core-views/functional-integrity-check'),
+        id: "core/functional-integrity-check",
+        click: function() {
+               //doFunctionalIntegrityCheck();
+        }
     }
   ];
 
@@ -197,7 +205,7 @@ DataTableColumnHeaderUI.prototype._createMenuForColumnHeader = function(elmt) {
     DataTableColumnHeaderUI._extenders[i].call(null, this._column, this, menu);
   }
 
-  MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "120px", horizontal: false });
+  MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "160px", horizontal: false });
 };
 
 DataTableColumnHeaderUI.prototype.createSortingMenu = function() {
