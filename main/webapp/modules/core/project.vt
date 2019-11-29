@@ -51,7 +51,20 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <a id="project-permalink-button" href="javascript:{}" class="secondary"></a>
       </div>
       <div id="project-controls">
+				<svg width="20" height="10">
+  					<rect width="20" height="10" style="fill:red;strokewidth:1;stroke:black" />  
+				</svg>
+  				<span>Duplicate</span>
+  				<svg width="20" height="10">
+  					<rect width="20" height="10" style="fill:yellow;strokewidth:1;stroke:black" />  
+				</svg>
+  				<span>Incomplete</span>
+  				<svg width="20" height="10">
+  					<rect width="20" height="10" style="fill:green;strokewidth:1;stroke:black" />  
+				</svg>
+  				<span>Valid</span>
         <a href="./" class="button" target="_blank"><span id="or-proj-open"></span></a>
+        
         <a class="button" bind="exportButton" id="export-button" href="#export"><span class="button-menu" id="or-proj-export"></span></a>
       </div>
     </div>
@@ -79,9 +92,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <button onClick="parent.location='dashboard.html'" id="btn-data-quality-dashboard"></button>
           </div>
         </div>
-        <div bind="viewPanelDiv" id="view-panel"></div>
+        <div bind="viewPanelDiv" id="view-panel">
+        </div>
       </div>
-      <div bind="processPanelDiv" id="notification-container"></div>
+      <div bind="processPanelDiv" id="notification-container">
+      </div>
     </div>
   </body>
 </html>

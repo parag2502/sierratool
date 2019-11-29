@@ -189,7 +189,7 @@ DataTableColumnHeaderUI.extendMenu(function(column, columnHeaderUI, menu) {
             "extend-data", 
             {
               baseColumnName: column.name,
-	      endpoint: endpoint,
+              endpoint: endpoint,
               identifierSpace: identifierSpace,
               schemaSpace: schemaSpace,
               columnInsertIndex: columnIndex + 1

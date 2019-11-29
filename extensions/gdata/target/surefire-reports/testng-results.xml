@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="GData extension" duration-ms="1065" started-at="2019-11-06T13:12:15Z" finished-at="2019-11-06T13:12:16Z">
+  <suite name="GData extension" duration-ms="1163" started-at="2019-11-08T12:14:17Z" finished-at="2019-11-08T12:14:19Z">
     <groups>
     </groups>
-    <test name="tests" duration-ms="1065" started-at="2019-11-06T13:12:15Z" finished-at="2019-11-06T13:12:16Z">
+    <test name="tests" duration-ms="1163" started-at="2019-11-08T12:14:17Z" finished-at="2019-11-08T12:14:19Z">
       <class name="com.google.refine.extension.gdata.UploadCommandTest">
-        <test-method status="PASS" signature="setUpRequestResponse()[pri:0, instance:com.google.refine.extension.gdata.UploadCommandTest@61f8bee4]" name="setUpRequestResponse" is-config="true" duration-ms="709" started-at="2019-11-06T18:42:15Z" finished-at="2019-11-06T18:42:16Z">
+        <test-method status="PASS" signature="setUpRequestResponse()[pri:0, instance:com.google.refine.extension.gdata.UploadCommandTest@61f8bee4]" name="setUpRequestResponse" is-config="true" duration-ms="790" started-at="2019-11-08T17:44:17Z" finished-at="2019-11-08T17:44:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpRequestResponse -->
-        <test-method status="PASS" signature="testCsrfProtection()[pri:0, instance:com.google.refine.extension.gdata.UploadCommandTest@61f8bee4]" name="testCsrfProtection" duration-ms="337" started-at="2019-11-06T18:42:16Z" finished-at="2019-11-06T18:42:16Z">
+        <test-method status="PASS" signature="testCsrfProtection()[pri:0, instance:com.google.refine.extension.gdata.UploadCommandTest@61f8bee4]" name="testCsrfProtection" duration-ms="341" started-at="2019-11-08T17:44:18Z" finished-at="2019-11-08T17:44:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCsrfProtection -->

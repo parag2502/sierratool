@@ -12,6 +12,10 @@ function DataTableView(div) {
 }
 
 DataTableView._extenders = [];
+var duplicate = [];
+var incomplete = [];
+var statusList = [];
+
 /*
   To extend, do something like this
 
@@ -100,6 +104,7 @@ DataTableView.prototype.render = function() {
   }
 
   this._renderDataTables(elmts.table[0], elmts.headerTable[0]);
+  
   this._div.empty().append(html);
 
   // show/hide null values in cells
@@ -315,9 +320,44 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
    */
 
   var rows = theProject.rowModel.rows;
-  var renderRow = function(tr, r, row, even) {
-    $(tr).empty();
+  var even = true;
+  
+  for (var r = 0; r < rows.length; r++) {
+	    var row = rows[r];
+	    var cells = row.cells;
+	    
+	    var tr = table.insertRow(table.rows.length);
+	    if (theProject.rowModel.mode == "row-based" || "j" in row) {
+	      even = !even;
+	    }
+	    
+	    var columns = theProject.columnModel.columns;
+	    var colLength = sessionStorage.getItem("columnLength");
+	    if(colLength == null){
+	    	sessionStorage.setItem("columnLength", columns.length);
+	    	colLength = columns.length;
+	    }
+	    var originalData = rows[r].cells.slice(0, colLength);
+	    
+	    // Check Empty cells
+	    var valid = originalData.filter(cell => cell === null);
+	    if(valid.length == 0){
+	    	incomplete[r] = false;
+	    } else {
+	    	incomplete[r] = true;
+	    }
+	    self.renderRow(tr, r, row, even);
+  }
+    
+  $(table.parentNode).bind('scroll', function(evt) {
+    self._adjustDataTableScroll();
+  });
+};
 
+DataTableView.prototype.renderRow = function(tr, r, row, even) {
+	self = this;
+    $(tr).empty();
+    var columns = theProject.columnModel.columns;
     var cells = row.cells;
 
     var tdStar = tr.insertCell(tr.cells.length);
@@ -335,7 +375,7 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
         {
           onDone: function(o) {
             row.starred = newStarred;
-            renderRow(tr, r, row, even);
+            self.renderRow(tr, r, row, even);
             self._adjustDataTables();
           }
         },
@@ -358,7 +398,7 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
         {
           onDone: function(o) {
             row.flagged = newFlagged;
-            renderRow(tr, r, row, even);
+            self.renderRow(tr, r, row, even);
             self._adjustDataTables();
           }
         },
@@ -369,7 +409,7 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
     var tdIndex = tr.insertCell(tr.cells.length);
     if (theProject.rowModel.mode == "record-based") {
       if ("j" in row) {
-        $(tr).addClass("record");
+    	$(tr).addClass("record");
         $('<div></div>').html((row.j + 1) + ".").appendTo(tdIndex);
       } else {
         $('<div></div>').html("&nbsp;").appendTo(tdIndex);
@@ -390,76 +430,52 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
       $('<div></div>').html("Success").appendTo(tdIndex);
     }*/
 
-    //$(tr).addClass(even ? "even" : "odd");
-    if (duplicate) {
-    	$(tr).addClass("duplicate");
-    } else if(incomplete) {
-    	$(tr).addClass("incomplete");
-    } else {
-    	$(tr).addClass("valid");
-    }
-
+    $(tr).addClass(even ? "even" : "odd");
+    /*if(incomplete[r] != null){
+	    if(incomplete[r]) {
+	    	$(tr).addClass("incomplete");
+	    } else {
+	    	$(tr).addClass("valid");
+	    }
+	}*/
+    
     for (var i = 0; i < columns.length; i++) {
       var column = columns[i];
       var td = tr.insertCell(tr.cells.length);
       if (column.name in self._collapsedColumnNames) {
         td.innerHTML = "&nbsp;";
       } else {
-        var cell = (column.cellIndex < cells.length) ? cells[column.cellIndex] : null;
-        new DataTableCellUI(self, cell, row.i, column.cellIndex, td);
+    	  var cell = (column.cellIndex < cells.length) ? cells[column.cellIndex] : null;
+    	  var colName = sessionStorage.getItem("statusColName");
+    	  var temp = JSON.parse(JSON.stringify(Refine.columnNameToColumn(colName)));
+    	  if(temp == null){
+    		  temp = JSON.parse(JSON.stringify(Refine.columnNameToColumn(colName+"1")));
+    	  }
+    	  var validCells = false;
+    	  if(temp != null){
+    	  if(column.cellIndex == temp.cellIndex){
+    		  var cellValue = JSON.parse(JSON.stringify(cell));
+    		  if(cellValue != null){
+    	  if(incomplete[r] != null){
+    		  if(cellValue.v == 'Duplicate'){
+    			  $(td).css('background-color', 'red');
+    		  } else {
+    		    if(incomplete[r]) {
+    		    	$(td).css('background-color', 'yellow');
+    		    } else {
+    		    	validCells = true;
+    		    	$(td).css('background-color', 'green');
+    		    }
+    		  }
+    	  }
+    		}
+    	  }
+    	  }
+        
+        new DataTableCellUI(self, cell, row.i, column.cellIndex, td, validCells);
       }
     }
   };
-
-  var even = true;
-  var incomplete = false;
-  var duplicate = false;
-  var valid = false;
-  
-  Refine.fetchRows(theProject.rowModel.start, theProject.rowModel.filtered, function() {
-	  var _allrows = theProject.rowModel.rows;
- 
-	  for (var r = 0; r < rows.length; r++) {
-	    var row = rows[r];
-	    var cells = row.cells;
-	    
-	    var tr = table.insertRow(table.rows.length);
-	    if (theProject.rowModel.mode == "row-based" || "j" in row) {
-	      even = !even;
-	    }
-	    
-	    var valid = cells.filter(cell => cell === null);
-	    if(valid.length == 0){
-	    	incomplete = false;
-	    } else {
-	    	incomplete = true;
-	    }
-	    
-	    if(r < (rows.length)) {
-	      	for (var i = 0; i < _allrows.length; i++) {
-	      	if(r != i) {
-	      		var cells1 = _allrows[i].cells;
-	  	    	if(JSON.stringify(cells) == JSON.stringify(cells1)){
-	  	    		duplicate = true;
-	  	    	} else {
-	  	        	duplicate = false; 
-	  	        }
-	      	}
-	      	
-	      	if(duplicate)
-	      		break;	
-	      	}
-	      }
-	    
-	      renderRow(tr, r, row, even);
-	      this.resizeAll();
-  }
-  }, this._sorting);
-  
-  $(table.parentNode).bind('scroll', function(evt) {
-    self._adjustDataTableScroll();
-  });
-};
 
 DataTableView.prototype._adjustDataTables = function() {
   var dataTable = this._div.find('.data-table');
@@ -516,9 +532,9 @@ DataTableView.prototype._adjustDataTableScroll = function() {
 
 DataTableView.prototype._showRows = function(start, onDone) {
   var self = this;
+
   Refine.fetchRows(start, this._pageSize, function() {
     self.render();
-
     if (onDone) {
       onDone();
     }
@@ -589,6 +605,138 @@ DataTableView.prototype._addSortingCriterion = function(criterion, alone) {
   this.update();
 };
 
+DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, columnName) {
+	var self = this;
+	
+	for (var i = 0; i < this._sorting.criteria.length; i++) {
+	      if (this._sorting.criteria[i].column == criterion.column) {
+	        this._sorting.criteria[i] = criterion;
+	        this.update();
+	        return;
+	      }
+	    }
+	  this._sorting.criteria.push(criterion);
+	  this.update();
+	  Refine.postCoreProcess(
+              "reorder-rows",
+              null,
+              {
+                "sorting" : JSON.stringify(self._sorting),
+                "mode" : ui.browsingEngine.getMode()
+              },
+              { rowMetadataChanged: true },
+              {
+                onDone: function() {
+                	self._sorting.criteria = [];
+                	var rows = theProject.rowModel.rows;
+                	var dataTable = self._div.find('.data-table');
+            	    var table = dataTable[0];
+                	findDuplicatesFromColumn(rows, self, table, columnName);
+                }
+              }
+            );
+	};
+	
+	var findDuplicatesFromColumn = function(_rows, self, table, columnName) {
+	    
+		Refine.fetchRows(theProject.rowModel.start, theProject.rowModel.filtered, function() {
+			 var rows = theProject.rowModel.rows;
+			 //console.log("Row========>"+JSON.stringify(rows));
+			  var status; 
+				var temp = JSON.parse(JSON.stringify(Refine.columnNameToColumn(columnName)));
+				var index = temp.cellIndex;
+				
+			  for (var r = 0; r < rows.length; r++) {
+				  statusList[r] = "Valid";
+				  
+				// Check Empty cells
+			    var valid = rows[r].cells.filter(cell => cell === null);
+			    if(valid.length == 0){
+			    	incomplete[r] = false;
+			    } else {
+			    	incomplete[r] = true;
+			    	statusList[r] = "Incomplete";
+			    }
+			    
+			    // Check duplicate column
+			    if(r == 0 && rows.length > 0) {
+			    	if(JSON.stringify(rows[r].cells[index]) == JSON.stringify(rows[r+1].cells[index])){
+		  	    		duplicate[r] = true;
+		  	    		statusList[r] = "Duplicate";
+		  	    	} else {
+		  	        	duplicate[r] = false; 
+		  	        }
+			    } else if(r == (rows.length-1)) {
+			    	if(JSON.stringify(rows[r].cells[index]) == JSON.stringify(rows[r-1].cells[index])){
+		  	    		duplicate[r] = true;
+		  	    		statusList[r] = "Duplicate";
+		  	    	} else {
+		  	        	duplicate[r] = false; 
+		  	        }
+			    } else {
+			    	if(JSON.stringify(rows[r].cells[index]) == JSON.stringify(rows[r+1].cells[index]) ||
+			    			JSON.stringify(rows[r].cells[index]) == JSON.stringify(rows[r-1].cells[index])){
+		  	    		duplicate[r] = true;
+		  	    		statusList[r] = "Duplicate";
+		  	    	} else {
+		  	        	duplicate[r] = false; 
+		  	        }
+			    }
+		  }
+			  
+			  Refine.postCoreProcess(
+		    	      "blank-down",
+		    	      {
+		    	        columnName: columnName
+		    	      },
+		    	      null,
+		    	      { modelsChanged: true },
+		    	      {
+		    	    	  onDone: function(o) {
+					        	var expQuery = "grel:if(value==null, 'Duplicate', 'Non-Duplicate')";
+								  Refine.postCoreProcess(
+									      "add-column", 
+									      {
+									        baseColumnName: columnName,  
+									        newColumnName: columnName+1, 
+									        columnInsertIndex: 0,
+									        onError: "keep-original"
+									      },
+									      { expression: expQuery.toString() },
+									      { modelsChanged: true },
+									      {
+									        onDone: function(o) {
+									        	Refine.postCoreProcess(
+									        		      "remove-column", 
+									        		      {
+									        		        columnName: columnName
+									        		      },
+									        		      null,
+									        		      { modelsChanged: true },
+									        		      {
+									        		    	  onFinallyDone: function(o) {
+														        	Refine.postCoreProcess(
+														        	        "rename-column", 
+														        	        {
+														        	          oldColumnName: columnName+1,
+														        	          newColumnName: columnName
+														        	        },
+														        	        null,
+														        	        { modelsChanged: true }
+														        	      );
+														        	
+														        }
+														      }
+									        		    );
+									        }
+									      }
+									    );
+					        }
+					      }
+		    	    );
+		  }, this._sorting);
+	};
+	
 /** below can be move to seperate file **/
   var doTextTransformPrompt = function() {
     var frame = $(
@@ -837,14 +985,14 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
                //TODO: FunctionalIntegrityCheck;
         }
     },
-    /*{},
+    {},
     {
         label: $.i18n('core-views/check-duplicates'),
         id: "core/check-duplicates",
         click: function() {
-        	new CheckColumnDuplicatesDialog();
+        	new CheckColumnDuplicatesDialog(self);
         }
-    }*/
+    }
   ];
 
   for (var i = 0; i < DataTableView._extenders.length; i++) {

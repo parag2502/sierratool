@@ -31,12 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  */
 
-function DataTableCellUI(dataTableView, cell, rowIndex, cellIndex, td) {
+function DataTableCellUI(dataTableView, cell, rowIndex, cellIndex, td, valid) {
   this._dataTableView = dataTableView;
   this._cell = cell;
   this._rowIndex = rowIndex;
   this._cellIndex = cellIndex;
   this._td = td;
+  this._valid = valid;
 
   this._render();
 }
@@ -96,9 +97,24 @@ DataTableCellUI.prototype._render = function() {
       .attr("target", "_blank")
       .appendTo(divContent);
     } else {
-      $('<span>')
-      .text(cell.v)
-      .appendTo(divContent);
+    	$('<span>')
+	      .text(cell.v)
+	      .appendTo(divContent);
+    	/*if(cell.v == 'Non-Duplicate'){
+    		if(this._valid) {
+		      $('<span>')
+		      .text("Valid")
+		      .appendTo(divContent);
+    		} else {
+    			$('<span>')
+  		      .text("Incomplete")
+  		      .appendTo(divContent);
+    		}
+    	} else {
+    		$('<span>')
+  	      .text(cell.v)
+  	      .appendTo(divContent);
+    	}*/
     }
   } else {
     var r = cell.r;

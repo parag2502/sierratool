@@ -391,6 +391,7 @@
       <class name="com.google.refine.commands.auth.DeAuthorizeCommand"/>
       <class name="com.google.refine.commands.browsing.ComputeClustersCommand"/>
       <class name="com.google.refine.commands.browsing.ComputeFacetsCommand"/>
+      <class name="com.google.refine.commands.browsing.GetClusteringFunctionsAndDistancesCommand$1"/>
       <class name="com.google.refine.commands.browsing.GetClusteringFunctionsAndDistancesCommand$FunctionsAndDistancesResponse"/>
       <class name="com.google.refine.commands.browsing.GetClusteringFunctionsAndDistancesCommand"/>
       <class name="com.google.refine.commands.browsing.GetScatterplotCommand$PlotterConfig"/>
@@ -524,6 +525,7 @@
       <class name="com.google.refine.exporters.CsvExporter$Configuration"/>
       <class name="com.google.refine.exporters.CsvExporter"/>
       <class name="com.google.refine.exporters.CustomizableTabularExporterUtilities$1"/>
+      <class name="com.google.refine.exporters.CustomizableTabularExporterUtilities$2"/>
       <class name="com.google.refine.exporters.CustomizableTabularExporterUtilities$CellFormatter"/>
       <class name="com.google.refine.exporters.CustomizableTabularExporterUtilities$ColumnOptions"/>
       <class name="com.google.refine.exporters.CustomizableTabularExporterUtilities$DateFormatMode"/>
@@ -726,6 +728,7 @@
       <class name="com.google.refine.importers.ImporterUtilities"/>
       <class name="com.google.refine.importers.ImportException"/>
       <class name="com.google.refine.importers.ImportingParserBase"/>
+      <class name="com.google.refine.importers.JsonImporter$1"/>
       <class name="com.google.refine.importers.JsonImporter$JSONTreeReader"/>
       <class name="com.google.refine.importers.JsonImporter$PreviewParsingState"/>
       <class name="com.google.refine.importers.JsonImporter"/>
@@ -736,6 +739,7 @@
       <class name="com.google.refine.importers.OdsImporter$1"/>
       <class name="com.google.refine.importers.OdsImporter"/>
       <class name="com.google.refine.importers.RdfJsonldTripleImporter"/>
+      <class name="com.google.refine.importers.RdfTripleImporter$1"/>
       <class name="com.google.refine.importers.RdfTripleImporter$Mode"/>
       <class name="com.google.refine.importers.RdfTripleImporter"/>
       <class name="com.google.refine.importers.RdfXmlTripleImporter"/>
@@ -767,6 +771,7 @@
       <class name="com.google.refine.importers.WikitextImporter$WikiTableDataReader"/>
       <class name="com.google.refine.importers.WikitextImporter$WikitextTableVisitor"/>
       <class name="com.google.refine.importers.WikitextImporter"/>
+      <class name="com.google.refine.importers.XmlImporter$1"/>
       <class name="com.google.refine.importers.XmlImporter$PreviewParsingState"/>
       <class name="com.google.refine.importers.XmlImporter$XmlParser"/>
       <class name="com.google.refine.importers.XmlImporter"/>
@@ -775,6 +780,7 @@
       <class name="com.google.refine.importing.FormatGuesser"/>
       <class name="com.google.refine.importing.ImportingController"/>
       <class name="com.google.refine.importing.ImportingJob"/>
+      <class name="com.google.refine.importing.ImportingManager$1"/>
       <class name="com.google.refine.importing.ImportingManager$CleaningTimerTask"/>
       <class name="com.google.refine.importing.ImportingManager$Format"/>
       <class name="com.google.refine.importing.ImportingManager$ImportingConfiguration"/>

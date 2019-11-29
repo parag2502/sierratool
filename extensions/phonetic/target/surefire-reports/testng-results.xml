@@ -2,34 +2,34 @@
 <testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Wikidata extension" duration-ms="279" started-at="2019-11-06T13:12:20Z" finished-at="2019-11-06T13:12:21Z">
+  <suite name="Wikidata extension" duration-ms="294" started-at="2019-11-08T12:14:22Z" finished-at="2019-11-08T12:14:23Z">
     <groups>
     </groups>
-    <test name="tests" duration-ms="279" started-at="2019-11-06T13:12:20Z" finished-at="2019-11-06T13:12:21Z">
+    <test name="tests" duration-ms="294" started-at="2019-11-08T12:14:22Z" finished-at="2019-11-08T12:14:23Z">
       <class name="org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest">
-        <test-method status="PASS" signature="testAccents()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testAccents" duration-ms="1" started-at="2019-11-06T18:42:21Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testAccents()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testAccents" duration-ms="1" started-at="2019-11-08T17:44:23Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAccents -->
-        <test-method status="PASS" signature="testDaitchMokotoff()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testDaitchMokotoff" duration-ms="0" started-at="2019-11-06T18:42:21Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testDaitchMokotoff()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testDaitchMokotoff" duration-ms="0" started-at="2019-11-08T17:44:23Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDaitchMokotoff -->
-        <test-method status="PASS" signature="testEmpty()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testEmpty" duration-ms="1" started-at="2019-11-06T18:42:21Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testEmpty()[pri:0, instance:org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest@475530b9]" name="testEmpty" duration-ms="0" started-at="2019-11-08T17:44:23Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmpty -->
       </class> <!-- org.openrefine.phonetic.keyers.DaitchMokotoffKeyerTest -->
       <class name="org.openrefine.phonetic.keyers.BeiderMorseKeyerTest">
-        <test-method status="PASS" signature="testAccents()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testAccents" duration-ms="252" started-at="2019-11-06T18:42:20Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testAccents()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testAccents" duration-ms="267" started-at="2019-11-08T17:44:22Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAccents -->
-        <test-method status="PASS" signature="testEmpty()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testEmpty" duration-ms="1" started-at="2019-11-06T18:42:21Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testEmpty()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testEmpty" duration-ms="1" started-at="2019-11-08T17:44:23Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmpty -->
-        <test-method status="PASS" signature="testKey()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testKey" duration-ms="4" started-at="2019-11-06T18:42:21Z" finished-at="2019-11-06T18:42:21Z">
+        <test-method status="PASS" signature="testKey()[pri:0, instance:org.openrefine.phonetic.keyers.BeiderMorseKeyerTest@cb5822]" name="testKey" duration-ms="4" started-at="2019-11-08T17:44:23Z" finished-at="2019-11-08T17:44:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testKey -->

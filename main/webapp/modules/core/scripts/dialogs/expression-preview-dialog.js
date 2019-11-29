@@ -156,6 +156,7 @@ ExpressionPreviewDialog.Widget.prototype.getExpression = function(commit) {
     }
     
     s = this._getLanguage() + ":" + s;
+    
     if (commit) {
         Refine.postCSRF(
             "command/core/log-expression?" + $.param({ project: theProject.id }),
