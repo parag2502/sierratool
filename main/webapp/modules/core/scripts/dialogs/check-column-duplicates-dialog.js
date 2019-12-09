@@ -44,20 +44,25 @@ CheckColumnDuplicatesDialog.prototype._dismiss = function() {
 
 CheckColumnDuplicatesDialog.prototype._commit = function() {
 	var self = this;
+	var columnName = "Status";
+    if(Refine.columnNameToColumnIndex(columnName) != -1){
+    	Refine.postCoreProcess(
+  		      "remove-column", 
+  		      {
+  		        columnName: columnName
+  		      },
+  		      null,
+  		      { modelsChanged: true },
+  		      {}
+  		    );
+    }
+    
     var columnNames = this._elmts.columnContainer.find('div').map(function() { return this.getAttribute("column"); }).get();
     var selectedColumnNames = this._elmts.trashContainer.find('div').map(function() { return this.getAttribute("column"); }).get();
     
     var baseColName = columnNames.toString().split(',');
     var selColArr = selectedColumnNames.toString().split(',');
     var columnIndex = Refine.columnNameToColumnIndex(baseColName[0]);
-    
-    //var columnName = $.trim(this._elmts.columnNameInput[0].value);
-    var columnName = "Status";
-    var c = 1;
-    while(Refine.columnNameToColumnIndex(columnName) != -1){
-    	columnName = columnName+c;
-    	c++;
-    }
     
     var colName = sessionStorage.getItem("statusColName");
     if(colName == null){
@@ -78,10 +83,15 @@ CheckColumnDuplicatesDialog.prototype._commit = function() {
     	}
     }
     
+    var baseCol = baseColName[0];
+    if(baseCol == "Status"){
+    	baseCol = baseColName[1];
+    }
+    
     Refine.postCoreProcess(
       "add-column", 
       {
-        baseColumnName: baseColName[0],  
+        baseColumnName: baseCol,  
         newColumnName: columnName, 
         columnInsertIndex: columnIndex,
         onError: "Error"

@@ -1,7 +1,7 @@
 function DataTableView(div) {
   this._div = div;
 
-  this._pageSize = 10;
+  this._pageSize = 50;
   this._showRecon = true;
   this._collapsedColumnNames = {};
   this._sorting = { criteria: [] };
@@ -682,6 +682,29 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 		  	        	duplicate[r] = false; 
 		  	        }
 			    }
+			    /*Refine.postCoreProcess(
+			            "edit-one-cell", 
+			            {},
+			            {
+			              row: r,
+			              cell: index,
+			              value: statusList[r],
+			              type: "text"
+			            },
+			            {},
+			            {
+			              onDone: function(o) {
+			                if (o.cell.r) {
+			                  o.cell.r = o.pool.recons[o.cell.r];
+			                }
+
+			                self._cell = o.cell;
+			                self._dataTableView._updateCell(self._rowIndex, self._cellIndex, self._cell);
+			                self._render();
+			                self._dataTableView._adjustDataTables();
+			              }
+			            }
+			          );*/
 		  }
 			  
 			  Refine.postCoreProcess(
@@ -982,7 +1005,7 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
         label: $.i18n('core-views/functional-integrity-check'),
         id: "core/functional-integrity-check",
         click: function() {
-               //TODO: FunctionalIntegrityCheck;
+        	//addTwoIntegers(5, 10);
         }
     },
     {},
@@ -1001,6 +1024,11 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
 
   MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "160px", horizontal: false });
 };
+
+/*var addTwoIntegers = function (a, b) { 
+	var jcoClass = new Packages.java.type("com.google.refine.sapjco.SapJcoConnectionMain");
+	console.log(jcoClass.addTwoIntegers(a, b));
+};*/
 
 DataTableView.prototype._createSortingMenu = function(elmt) {
   var self = this;
