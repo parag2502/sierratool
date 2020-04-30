@@ -126,6 +126,7 @@ com\google\refine\grel\Scanner$Token.class
 com\google\refine\importers\LineBasedImporter.class
 com\google\refine\model\ReconType.class
 com\google\refine\operations\recon\ReconJudgeSimilarCellsOperation$1.class
+com\google\refine\sapjco\SapJcoConnectionMain.class
 com\google\refine\sorting\StringCriterion$1.class
 com\google\refine\browsing\facets\TextSearchFacet$1.class
 com\google\refine\model\RecordModel$RowDependency.class

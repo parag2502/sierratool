@@ -193,10 +193,152 @@ DataTableColumnHeaderUI.prototype._createMenuForColumnHeader = function(elmt) {
     },
     {},
     {
+        label: $.i18n('core-views/data-integrity-check'),
+        id: "core/data-integrity-check",
+        click: function() {
+        	var nthterm = self._columnIndex+4;
+            if(self._column.name == 'City') {
+              var cityname = [];
+              var getcity;
+              $('table.data-table tr td:nth-child('+nthterm+')').each(function(){
+                getcity = $(this).text().trim();
+                if(getcity == null ||  
+                  getcity == undefined || 
+                  getcity == 0) { 
+                    getcity = 'didnotfound';
+                  }
+                cityname.push(getcity); 
+              });
+              var jsonString = cityname.join();
+              console.log(jsonString);
+              jQuery.ajax({
+                dataType: "jsonp",
+                url: 'https://sierradigitalinc.com/dpc_tool/check.php?city='+jsonString,
+                beforeSend: function(){
+                  // Show image container
+                  $( "body" ).append( "<style>.loader{border: 16px solid #f3f3f3;border-top: 16px solid #000;border-radius: 50%;width: 120px;height: 120px;animation: spin 2s linear infinite;position:absolute;left:0;right:0;top:35%;margin:0px auto;}@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}</style><div class='loader'></div>" );
+                 },
+                success: function (result) {
+                  var z = 0;
+                  var cities = JSON.parse(result.city);
+                  $('table.data-table tr td:nth-child('+nthterm+')').each(function(){
+                    if(cities[z] == '2') {
+                      $('span',this).css('color','#ff0000');
+                    }
+                    z++;
+                  });
+                },
+                complete:function(data){
+                  // Hide image container
+                  $(".loader").remove();
+                 }
+              });  
+            }
+            else {
+              alert('Please select City Column for Data Integration Check')
+            }
+        }
+    },
+    {},
+    {
         label: $.i18n('core-views/functional-integrity-check'),
         id: "core/functional-integrity-check",
         click: function() {
-               //doFunctionalIntegrityCheck();
+        	
+        	var nthterm = self._columnIndex+4;
+              var colDataArr = [];
+              var cData;
+              // get column data
+              $('table.data-table tr td:nth-child('+nthterm+')').each(function(){
+                cData = $(this).text().trim();
+                if(cData == null ||  
+                  cData == undefined || 
+                  cData == 0) { 
+                    cData = 'didnotfound';
+                  }
+                colDataArr.push(cData); 
+              });
+              
+              //url: 'https://sierradigitalinc.com/dpc_tool/check.php?city='+jsonString,
+              
+              //var urlString = "http://192.168.8.119:50000/sap/opu/odata/SAP/ZDPC_TOOL_CUST_SRV_01/CustomerSet(FieldName='ORT01')?$format=json";
+              
+              var jsonString = colDataArr.join();
+              
+              /*var settings = {
+            		  "url": "http://192.168.8.119:50000/sap/opu/odata/SAP/ZDPC_TOOL_CUST_SRV_01/CustomerSet(FieldName='ORT01')?$format=json",
+            		  "method": "GET",
+            		  "timeout": 30000,
+                	  "contentType": 'application/json',
+                	  "crossDomain" : true,
+            		  "headers": {
+            		    "Authorization": "Basic YWRtaW46V2VsY29tZTE="
+            		  },
+            		  beforeSend: function(xhr){
+                          // Show image container
+                            xhr.setRequestHeader ("Authorization", "Basic YWRtaW46V2VsY29tZTE=");
+
+                          $( "body" ).append( "<style>.loader{border: 16px solid #f3f3f3;border-top: 16px solid #000;border-radius: 50%;width: 120px;height: 120px;animation: spin 2s linear infinite;position:absolute;left:0;right:0;top:35%;margin:0px auto;}@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}</style><div class='loader'></div>" );
+                         },
+            		};
+              			
+            		$.ajax(settings).done(function (response) {
+            		  console.log(response);
+            		  alert("Success");
+            		});*/
+
+              //var urlString = "https://sierradigitalinc.com/dpc_tool/check.php?city="+jsonString;
+              jQuery.ajax({
+            	  method: "GET",
+            	  timeout: 30000,
+            	  contentType: 'application/json',
+            	  crossDomain : true,
+            	  url: "http://192.168.8.119:50000/sap/opu/odata/SAP/ZDPC_TOOL_CUST_SRV_01/CustomerSet(FieldName='ORT01')?$format=json",
+                beforeSend: function(xhr){
+                  // Show image container
+                    xhr.setRequestHeader ("Authorization", "Basic YWRtaW46V2VsY29tZTE=");
+
+                  $( "body" ).append( "<style>.loader{border: 16px solid #f3f3f3;border-top: 16px solid #000;border-radius: 50%;width: 120px;height: 120px;animation: spin 2s linear infinite;position:absolute;left:0;right:0;top:35%;margin:0px auto;}@keyframes spin {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}</style><div class='loader'></div>" );
+                 },
+                success: function (result) {
+                  var z = 0;
+                  console.log(result);
+                  var cities = JSON.parse(result.FieldName);
+                  var sapCompData = ['Chennai', 'Salem', 'CHENNAI', 'Texas', 'DE'];
+                  
+                  Array.prototype.contains = function(v) {
+                	  for (var i = 0; i < this.length; i++) {
+                	    if (this[i] === v) return true;
+                	  }
+                	  return false;
+                	};
+
+                	Array.prototype.unique = function() {
+                	  var arr = [];
+                	  for (var i = 0; i < this.length; i++) {
+                	    if (!arr.contains(this[i])) {
+                	      arr.push(this[i].toUpperCase());
+                	    }
+                	  }
+                	  return arr;
+                	}
+                	
+                	var sapCompDataUnique = sapCompData.unique();
+                	console.log("Unique SAP data: "+sapCompDataUnique);
+                	
+                  $('table.data-table tr td:nth-child('+nthterm+')').each(function(){
+                	//To compare column data with SAP data
+                    if(!sapCompDataUnique.contains(colDataArr[z].toUpperCase())) {
+                      $('span',this).css({"color": "#ff0000", "font-weight": "bold"});
+                    }
+                    z++;
+                  });
+                },
+                complete:function(data){
+                  // Hide image container
+                  $(".loader").remove();
+                 }
+              });
         }
     }
   ];

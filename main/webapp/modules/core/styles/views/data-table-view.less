@@ -125,24 +125,26 @@ table.data-header-table td.column-header, table.data-table td.column-header {
 
 /* For the preview in the importing stage */
 table.data-table td.column-header {
+	
   background: @fill_primary;
   border-bottom: 2px solid @chrome_primary;
   }
 
 .column-header-name {
-  margin: 0 0 0 21px;
-  padding: 4px 0 0 0;
-  display: block;
+  margin: 0 21 0 0px;
+  padding: 4px 4px 0 0;
+  display:inline-block;
+  vertical-align: middle; 
   }
 
 a.column-header-menu {
-  float: left;
-  display: block;
-  margin: 0 4px 0 0;
+  margin: 0 4 0 0;
   width: 17px;
   height: 19px;
   background-image: url(../../images/menu-dropdown.png);
   background-repeat: no-repeat;
+  display:inline-block;
+  vertical-align: middle; 
   }
 
 a.column-header-menu:hover {

@@ -89,13 +89,13 @@ $.i18n({ locale: lang });
 
 Refine.selectActionArea = function(id) {
   $('.action-area-tab').removeClass('selected');
-  $('.action-area-tab-body').css('visibility', 'hidden').css('z-index', '50');
-
+  $('.action-area-tab-body').css('visibility', 'hidden').css('z-index', '70');
+//#changes v1
   for (var i = 0; i < Refine.actionAreas.length; i++) {
     var actionArea = Refine.actionAreas[i];
     if (id == actionArea.id) {
       actionArea.tabElmt.addClass('selected');
-      actionArea.bodyElmt.css('visibility', 'visible').css('z-index', '55');
+      actionArea.bodyElmt.css('visibility', 'visible').css('z-index', '75');
     }
   }
 };
@@ -166,11 +166,11 @@ $(function() {
   };
 
   var resize = function() {
-    var leftPanelWidth = 150;
+    var leftPanelWidth = 10; //150;
     // px
     var width = $(window).width();
     var height = $(window).height();
-    var headerHeight = $('#header').outerHeight();
+    var headerHeight = 104;//$('#header').outerHeight();
     var panelHeight = height - headerHeight;
 
     $('.main-layout-panel')
@@ -204,7 +204,7 @@ $(function() {
     .css("margin-left", rightPanelBodyHPaddings + "px")
     .css("margin-top", rightPanelBodyVPaddings + "px")
     .css("width", ($('#right-panel').width() - rightPanelBodyHPaddings) + "px")
-    .css("height", ($('#right-panel').height() - rightPanelBodyVPaddings) + "px");
+    .css("height", (($('#right-panel').height() - rightPanelBodyVPaddings))-5 + "px");
     
     for (var i = 0; i < Refine.actionAreas.length; i++) {
       Refine.actionAreas[i].ui.resize();
@@ -225,7 +225,7 @@ $(function() {
     .click(function() {
       Refine.selectActionArea(actionArea.id);
     });
-
+    
     actionArea.ui = new actionArea.uiClass(actionArea.bodyElmt);
   };
 

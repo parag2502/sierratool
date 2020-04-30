@@ -51,8 +51,8 @@ Refine.CreateProjectUI = function(elmt) {
   
   $('#or-create-question').text($.i18n('core-index-create/question'));
   $('#or-create-formats').text($.i18n('core-index-create/formats'));
-  $('#or-create-from').text($.i18n('core-index-create/from'));
-  
+  //$('#or-create-from').text($.i18n('core-index-create/from'));
+  $('#or-create-from').append("<h3>"+$.i18n('core-index-create/from')+"</h3>");
   $('#create-project-progress-cancel-button').text($.i18n('core-buttons/cancel'));
   $('#create-project-error-ok-button').html($.i18n('core-buttons/ok'));
   
@@ -87,15 +87,17 @@ Refine.CreateProjectUI.prototype._initializeUI = function() {
 
 Refine.CreateProjectUI.prototype.addSourceSelectionUI = function(sourceSelectionUI) {
   var self = this;
-
+console.log(sourceSelectionUI.label);
   var headerContainer = $('#create-project-ui-source-selection-tabs');
   var bodyContainer = $('#create-project-ui-source-selection-tab-bodies');
 
+  if(sourceSelectionUI.label !='Clipboard') {
+	  if(sourceSelectionUI.label !='Google Data') {
   sourceSelectionUI._divBody = $('<div>')
   .addClass('create-project-ui-source-selection-tab-body')
   .appendTo(bodyContainer)
   .hide();
-
+   
   sourceSelectionUI._divHeader = $('<div>')
   .addClass('create-project-ui-source-selection-tab')
   .text(sourceSelectionUI.label)
@@ -103,7 +105,10 @@ Refine.CreateProjectUI.prototype.addSourceSelectionUI = function(sourceSelection
   .click(function() { self.selectImportSource(sourceSelectionUI.id); });
 
   sourceSelectionUI.ui.attachUI(sourceSelectionUI._divBody);
-
+	  }
+  }
+  
+  
   this._sourceSelectionUIs.push(sourceSelectionUI);
 
   if (this._sourceSelectionUIs.length == 1) {

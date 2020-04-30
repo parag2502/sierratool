@@ -68,27 +68,37 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   width: 15em;
   background: @fill_primary;
   padding-left: @padding_looser;
-  padding-bottom: @padding_looser;
+ // padding-bottom: @padding_looser;
+  padding-bottom:0px;
   }
 #create-project-ui-source-selection-tabs > div {
   padding: @padding_normal;
+  display: inline-flex;
+  margin-left:0px;
+  margin-right:10px;
+  border-radius: 3px 3px 0px 0px;
   }
 
 .create-project-ui-source-selection-tab-body {
   padding: @padding_loose;
   overflow: auto;
+ 
+  
   }
 
 .create-project-ui-source-selection-tab {
   cursor: pointer;
   color: @link_primary;
+
   }
 .create-project-ui-source-selection-tab.selected {
   cursor: default;
   color: black;
   background: white;
   font-weight: bold;
-  .rounded_corners_left();
+  //.rounded_corners_left();
+  margin-top: 12px;
+  margin-left: 7px;
   }
 
 .create-project-ui-panel {
@@ -146,7 +156,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #create-project-error-message {
   }
 #create-project-error-stack {
-  font-family: monospace;
+  font-family: Segoe UI;
   whitespace: pre;
   padding: @padding_normal;
   border: 1px solid @chrome_primary;

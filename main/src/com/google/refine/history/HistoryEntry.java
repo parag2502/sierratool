@@ -39,6 +39,17 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.Properties;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;   
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -127,6 +138,14 @@ public class HistoryEntry {
             logger.error("Failed to get history entry manager from project manager: " 
                     + ProjectManager.singleton );
         }
+        try {
+        	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        	LocalDateTime now = LocalDateTime.now();  
+        	String time1 = dtf.format(now);
+        	callAuditTrailAPI(ProjectManager.singleton.getProject(projectID),String.valueOf(projectID), description, time1);
+        } catch(Exception e) {
+        	e.printStackTrace();
+        }
     }
 
     public void save(Writer writer, Properties options){
@@ -181,5 +200,42 @@ public class HistoryEntry {
     public void delete(){
         _manager.delete(this);
     }
-
+    
+    public static void callAuditTrailAPI(Project project, String projectId, String activity, String time) throws IOException {
+    	String user = project.getMetadata().getCreator();
+    	
+        final String POST_PARAMS = "{\r\n\t \r\n\t\"user\": \""+user+"\",\r\n\t"
+        		+ "\"project_id\": \""+projectId+"\",\r\n\t"
+        		+ "\"activity\": \""+activity+"\",\r\n\t"
+        		+ "\"status\": 1,\r\n\t"
+        		+ "\"added_on\": \""+time+"\",\r\n\t"
+        		+ "\"added_by\": null\r\n}";
+    	
+        System.out.println(POST_PARAMS);
+        URL obj = new URL("http://1.22.181.55:3002/api/audit/");
+        HttpURLConnection postConnection = (HttpURLConnection) obj.openConnection();
+        postConnection.setRequestMethod("POST");
+        postConnection.setRequestProperty("Content-Type", "application/json");
+        postConnection.setDoOutput(true);
+        OutputStream os = postConnection.getOutputStream();
+        os.write(POST_PARAMS.getBytes());
+        os.flush();
+        os.close();
+        int responseCode = postConnection.getResponseCode();
+        System.out.println("POST Response Code :  " + responseCode);
+        System.out.println("POST Response Message : " + postConnection.getResponseMessage());
+        if (responseCode == HttpURLConnection.HTTP_CREATED) { //success
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                postConnection.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in .readLine()) != null) {
+                response.append(inputLine);
+            } in .close();
+            // print result
+            System.out.println(response.toString());
+        } else {
+            System.out.println("POST NOT WORKED");
+        }
+    }
 }

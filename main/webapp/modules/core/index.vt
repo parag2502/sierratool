@@ -2,41 +2,61 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SierraTool</title>
+  <title>DPC Tool</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
+
   <script type="text/javascript" src="wirings.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+	<script src="assets/js/admin.js"></script>
   $scriptInjection
   $styleInjection
-  <script>Refine.encodings = $encodingJson; Refine.defaultEncoding = $defaultEncoding;</script>
-</head>
+ <script>Refine.encodings = $encodingJson; Refine.defaultEncoding=$defaultEncoding;</script>
+ </head>
+
 <body>
   <div id="header">
     <img alt="SierraTool" src="images/logo-openrefine-550.png" height="29" />
-    <span id="slogan"></span>
+    <span id=""><b style="font-size: 11px;">Ultimate automation tool for data cleansing & transformation.</b></span>
+    <span id="about"><a href="about.html" id="or-index-about"></a></span>
+    <span id="logo"><img alt="SierraTool" src="images/logo-gem-126.png" height="45" /></span>
+    <span><a class="button" onclick="logout()" style="float: right;margin-top: 20px;">Logout</a></span>
+  </div>
+  <div>
+  <p id="login_as" style="float: right; margin-right: 10px;"></p>
+  </div>
+   
+  <div id="testing" >
+  <ul id="action-area-tabs">
+  </ul>
+  </div >
+  
+
+  
+  
+  
+  <div id="left-panel" class="main-layout-panel">
+  <div id="left-panel-body">
+  </div>
   </div>
   
-  <div id="left-panel" class="main-layout-panel"><div id="left-panel-body">
-    <ul id="action-area-tabs">
-    </ul>
-    
-    <div id="project-links">
-      <div id="logo-container">
-        <img alt="SierraTool" src="images/logo-gem-126.png" height="65" />
-        <div id="openrefine-version"></div>
-      </div>
-      <ul>
-        <li><a href="preferences" id="or-index-pref"></a></li>
-        <li><a href="about.html" id="or-index-about"></a></li>
-      </ul>
-    </div>
-  </div></div> <!-- left-panel -->
 
-  <div id="right-panel" class="main-layout-panel"><div id="right-panel-body">
-  </div></div> <!-- right-panel -->
+    
+    
+
+  <div id="right-panel" class="main-layout-panel">
+  <div id="right-panel-body">
+  </div>
+  </div> <!-- right-panel -->
   
   <div id="no-project-message" class="message" style="display: none;">
     <span id="or-index-noProj"></span><br/>
     <span id="or-index-try"></span>
   </div>
+  
+  
+  
 </body>
 </html>

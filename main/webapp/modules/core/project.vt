@@ -42,6 +42,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <script type="text/javascript" src="wirings.js"></script>
     $scriptInjection
     <script>Refine.encodings = $encodingJson; Refine.defaultEncoding = $defaultEncoding;</script>
+	<script src="assets/js/admin.js"></script>
   </head>
   <body>
     <div id="header">
@@ -51,6 +52,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <a id="project-permalink-button" href="javascript:{}" class="secondary"></a>
       </div>
       <div id="project-controls">
+				<span id="login_as" style="margin-right: 10px;"></span>
 				<svg width="20" height="10">
   					<rect width="20" height="10" style="fill:red;strokewidth:1;stroke:black" />  
 				</svg>
@@ -66,9 +68,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <a href="./" class="button" target="_blank"><span id="or-proj-open"></span></a>
         
         <a class="button" bind="exportButton" id="export-button" href="#export"><span class="button-menu" id="or-proj-export"></span></a>
-      </div>
+		<span><a class="button" onclick="logout()" style="float: right; margin-left: 3px;">Logout</a></span>
+	  </div>
     </div>
-    
+    <div>
+  
+  </div>
     <div id="loading-message"><img src="images/large-spinner.gif" /> <span id="or-proj-starting"></span></div>
       
     <div id="body">
@@ -89,7 +94,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           </div>
           <div bind="extensionBarDiv" id="extension-bar">
             <span hidden id="or-proj-ext"></span> <span hidden bind="menuContainer" id="extension-bar-menu-container"></span>
-            <button onClick="parent.location='dashboard.html'" id="btn-data-quality-dashboard"></button>
+            <button id="btn-data-quality-dashboard">Data Quality Dashboard</button>
+			<button onClick="parent.location='Audittrail.html'" id="btn-audit-trial"></button>
           </div>
         </div>
         <div bind="viewPanelDiv" id="view-panel">

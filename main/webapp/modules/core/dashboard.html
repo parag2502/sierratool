@@ -1,24 +1,128 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Quality Dashboard - SierraTool</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="/styles/common.less" />
-    <style>
-      #body-info {
-        margin-bottom: 10em;
-      }
-      img {
-  		width: 100%;
-	  }
-    </style>
-    <script type="text/javascript" src="scripts/version.js"></script>
-    <script type="text/javascript" src="externals/jquery-1.11.1.js"></script>
-  </head>
-  <body>
-    <div>
-    <img src="images/sample_dashboard.png" alt="Dashboard">
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dashboard</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
     </div>
-  </body>
+    <!-- /Preloader -->
+    
+	<!-- HK Wrapper -->
+
+
+      
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper">
+            <!-- Breadcrumb -->
+            <center><h3>Assessment for Data Quality</h3></center>
+            <!-- /Breadcrumb -->
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Title -->
+                <div class="hk-pg-header">
+
+                </div>
+                <!-- /Title -->
+
+                <!-- Row -->
+                <div class="hk-row">
+                    <div class="col-xl-6">
+                        <section class="hk-sec-wrapper">
+                            <h6 class="hk-sec-title">No of empty values</h6>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div id="e_chart_2" class="echart" style="height:294px;"></div>
+                                </div>
+                            </div>
+                        </section>
+                       
+         
+                    </div>
+                    <div class="col-xl-6">
+                        <section class="hk-sec-wrapper">
+                            <h6 class="hk-sec-title">Ratio Of Data Errors</h6>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div id="e_chart_22" class="echart" style="height:294px;"></div>
+                                </div>
+                            </div>
+                        </section>
+                     
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+
+            <!-- Footer -->
+            <div class="hk-footer-wrap container">
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /Footer -->
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- EChartJS JavaScript -->
+    <script src="vendors/echarts/dist/echarts-en.min.js"></script>
+    <script src="dist/js/piecharts-data.js"></script>
+	<script src="dist/js/barcharts-data.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="dist/js/init.js"></script>
+
+</body>
+
 </html>

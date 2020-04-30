@@ -64,7 +64,7 @@ Refine.reportException = function(e) {
 };
 
 function resize() {
-  var leftPanelWidth = 300;
+  var leftPanelWidth = 0;
   var width = $(window).width();
   var top = $("#header").outerHeight();
   var height = $(window).height() - top;
@@ -72,9 +72,9 @@ function resize() {
   var leftPanelPaddings = ui.leftPanelDiv.outerHeight(true) - ui.leftPanelDiv.height();
   ui.leftPanelDiv
   .css("top", top + "px")
-  .css("left", "0px")
+  .css("left", "75%")
   .css("height", (height - leftPanelPaddings) + "px")
-  .css("width", leftPanelWidth + "px");
+  .css("width", leftPanelWidth + "25%");
 
   var leftPanelTabsPaddings = ui.leftPanelTabs.outerHeight(true) - ui.leftPanelTabs.height();
   ui.leftPanelTabs.height(ui.leftPanelDiv.height() - leftPanelTabsPaddings);
@@ -85,11 +85,12 @@ function resize() {
   .css("top", top + "px")
   .css("left", leftPanelWidth + "px")
   .css("height", (height - rightPanelVPaddings) + "px")
-  .css("width", (width - leftPanelWidth - rightPanelHPaddings) + "px");
+  //.css("width", (width - leftPanelWidth - rightPanelHPaddings) + "1200px");
+  .css("width", "75%");
 
   ui.viewPanelDiv.height((height - ui.toolPanelDiv.outerHeight() - rightPanelVPaddings) + "px");
 
-  var processPanelWidth = 400;
+  var processPanelWidth = "25%";
   ui.processPanelDiv
   .css("width", processPanelWidth + "px")
   .css("left", Math.floor((width - processPanelWidth) / 2) + "px");
@@ -133,6 +134,7 @@ function initializeUI(uiState) {
   $("#or-proj-undoRedo").text($.i18n('core-project/undo-redo'));
   $("#or-proj-ext").text($.i18n('core-project/extensions')+":");
   $("#btn-data-quality-dashboard").text($.i18n('core-buttons/data-quality-dashboard'));
+  $("#btn-audit-trial").text($.i18n('core-buttons/audit-trial'));
   $('#project-name-button').click(Refine._renameProject);
   $('#project-permalink-button').mouseenter(function() {
     this.href = Refine.getPermanentLink();
@@ -570,3 +572,32 @@ function onLoad() {
 }
 
 $(onLoad);
+
+function getUrlVar() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+  });
+  return vars;
+}
+
+function getUrlatt(parameter, defaultvalue){
+  var urlparameter = defaultvalue;
+  if(window.location.href.indexOf(parameter) > -1){
+      urlparameter = getUrlVar()[parameter];
+      }
+  return urlparameter;
+}
+
+$(document).on('click', '#btn-data-quality-dashboard', function(){ 
+  var projectid = getUrlatt('project','empty');
+  var arr = $('.facet-choice-count').map(function(){ return +$(this).text() }).get();
+  if(arr[0] >= 0) {
+    document.cookie = ""+projectid+"d= "+arr[0]+"";
+    document.cookie = ""+projectid+"i= "+arr[1]+"";
+    document.cookie = ""+projectid+"v= "+arr[2]+"";
+
+  }
+  var websiteurl = 'http://' + window.location.hostname + ':3333/dashboard.html?project='+projectid;
+  window.open(websiteurl);
+});

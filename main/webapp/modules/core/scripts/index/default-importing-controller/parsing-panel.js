@@ -112,12 +112,13 @@ Refine.DefaultImportingController.prototype._prepareParsingPanel = function() {
     var height = self._parsingPanel.height();
     var headerHeight = elmts.wizardHeader.outerHeight(true);
     var controlPanelHeight = 300;
-
+//# version 1
     elmts.dataPanel
     .css("left", "0px")
     .css("top", headerHeight + "px")
     .css("width", (width - DOM.getHPaddings(elmts.dataPanel)) + "px")
-    .css("height", (height - headerHeight - controlPanelHeight - DOM.getVPaddings(elmts.dataPanel)) + "px");
+    //.css("height", (height - headerHeight - controlPanelHeight - DOM.getVPaddings(elmts.dataPanel)) + "px");
+    .css("height", (height - headerHeight - DOM.getVPaddings(elmts.dataPanel)) + "px");
     elmts.progressPanel
     .css("left", "0px")
     .css("top", headerHeight + "px")
@@ -126,11 +127,25 @@ Refine.DefaultImportingController.prototype._prepareParsingPanel = function() {
 
     elmts.controlPanel
     .css("left", "0px")
-    .css("top", (height - controlPanelHeight) + "px")
+   // .css("top", (height - controlPanelHeight) + "px")
+    .css("top", headerHeight + "px")
     .css("width", (width - DOM.getHPaddings(elmts.controlPanel)) + "px")
     .css("height", (controlPanelHeight - DOM.getVPaddings(elmts.controlPanel)) + "px");
   };
 
+// #version 1
+  $('#CWShowDataPanel').click(function() { 
+	 // $('#CWControlPanel,#CWDataPanel').toggle();
+	  $('#CWDataPanel').show();
+	  $('#CWControlPanel').hide();
+  });
+  $('#CWShowControlPanel').click(function() {
+	  $('#CWDataPanel').hide();
+	  $('#CWControlPanel').show();
+  });
+   
+  
+  
   $(window).resize(this._parsingPanelResizer);
   this._parsingPanelResizer();
 

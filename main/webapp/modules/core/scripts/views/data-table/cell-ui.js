@@ -97,10 +97,10 @@ DataTableCellUI.prototype._render = function() {
       .attr("target", "_blank")
       .appendTo(divContent);
     } else {
-    	/*$('<span>')
+    	$('<span>')
 	      .text(cell.v)
-	      .appendTo(divContent);*/
-    	if(cell.v == 'Non-Duplicate'){
+	      .appendTo(divContent);
+    	/*if(cell.v == 'Non-Duplicate'){
     		if(this._valid) {
 		      $('<span>')
 		      .text("Valid")
@@ -114,7 +114,7 @@ DataTableCellUI.prototype._render = function() {
     		$('<span>')
   	      .text(cell.v)
   	      .appendTo(divContent);
-    	}
+    	}*/
     }
   } else {
     var r = cell.r;

@@ -65,7 +65,8 @@ DataTableView.prototype.render = function() {
       '<div class="viewpanel-rowrecord" bind="rowRecordControls">'+$.i18n('core-views/show-as')+': ' +
         '<span bind="modeSelectors"></span>' + 
       '</div>' +
-      '<div class="viewpanel-pagesize" bind="pageSizeControls"></div>' +
+      //'<div class="viewpanel-pagesize" bind="pageSizeControls"></div>' +
+      '<select class="viewpanel-pagesize" id="pageDropDown" bind="pageSizeControls"> </select>' +
       '<div class="viewpanel-sorting" bind="sortingControls"></div>' +
       '<div class="viewpanel-paging" bind="pagingControls"></div>' +
     '</div>' +
@@ -130,6 +131,20 @@ DataTableView.prototype._renderSortingControls = function(sortingControls) {
 
 DataTableView.prototype._renderPagingControls = function(pageSizeControls, pagingControls) {
   var self = this;
+  
+  Refine.postCSRF(
+          "command/core/set-project-metadata?"+ $.param({ project: theProject.id }),
+          {
+            name : "creator",
+            value : localStorage.getItem("creator")
+          },
+          function(o) {
+            if (o.code === "error") {
+              alert(o.message);
+            } 
+          },
+          "json"
+        );
 
   var from = (theProject.rowModel.start + 1);
   var to = Math.min(theProject.rowModel.filtered, theProject.rowModel.start + theProject.rowModel.limit);
@@ -156,7 +171,7 @@ DataTableView.prototype._renderPagingControls = function(pageSizeControls, pagin
     lastPage.addClass("inaction");
   }
 
-  $('<span>'+$.i18n('core-views/show')+': </span>').appendTo(pageSizeControls);
+  /*$('<span>'+$.i18n('core-views/show')+': </span>').appendTo(pageSizeControls);
   var sizes = [ 5, 10, 25, 50 ];
   var renderPageSize = function(index) {
     var pageSize = sizes[index];
@@ -179,7 +194,35 @@ DataTableView.prototype._renderPagingControls = function(pageSizeControls, pagin
   $('<span>')
   .text(theProject.rowModel.mode == "record-based" ? ' '+$.i18n('core-views/records') : ' '+$.i18n('core-views/rows'))
   .appendTo(pageSizeControls);
-};
+};*/
+  
+  var sizes = [ 5, 10, 25, 50 ];
+  var renderPageSize = function(index) {
+    var pageSize = sizes[index];
+    var a = $('<option value="'+pageSize+'">'+pageSize+'</option>')
+    .addClass("viewPanel-pagingControls-page")
+    .appendTo(pageSizeControls);
+    if (pageSize == self._pageSize) {
+     console.log('step if : ',pageSize,self._pageSize);
+      a.attr('selected', true);
+    } else {
+     a.addClass("action");
+    }
+  };
+  
+  for(var i=0; i<sizes.length; i++) {
+  renderPageSize(i);
+  
+  }
+  $(document).on('change', '#pageDropDown', function(){
+     self._pageSize = $('#pageDropDown').val();
+        self.update();
+        $('#pageDropDown option[value="' + $('#pageDropDown').val() +'"]').prop("selected", true);
+        
+      });
+
+ };
+
 
 DataTableView.prototype._renderDataTables = function(table, headerTable) {
   var self = this;
@@ -276,8 +319,8 @@ DataTableView.prototype._renderDataTables = function(table, headerTable) {
       .attr("colspan", "3")
       .addClass("column-header")
       .html(
-        '<div class="column-header-title">' +
-          '<a class="column-header-menu" bind="dropdownMenu"></a><span class="column-header-name">'+$.i18n('core-views/all')+'</span>' +
+          '<div class="column-header-title">' +
+          '<span class="column-header-name">'+$.i18n('core-views/all')+'</span><a class="column-header-menu" bind="dropdownMenu"></a>' +
         '</div>'
       )
   ).dropdownMenu.click(function() {
@@ -459,15 +502,13 @@ DataTableView.prototype.renderRow = function(tr, r, row, even) {
     	  if(incomplete[r] != null){
     		  if(cellValue.v == 'Duplicate'){
     			  $(td).css('background-color', 'red');
-    		  } else {
-    		    if(incomplete[r]) {
+    		  } else if(cellValue.v == 'Incomplete') {
     		    	$(td).css('background-color', 'yellow');
     		    } else {
     		    	validCells = true;
     		    	$(td).css('background-color', 'green');
     		    }
     		  }
-    	  }
     		}
     	  }
     	  }
@@ -608,6 +649,9 @@ DataTableView.prototype._addSortingCriterion = function(criterion, alone) {
 DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, columnName) {
 	var self = this;
 	
+	self._collapsedColumnNames[columnName] = true;
+    self.render();
+    
 	for (var i = 0; i < this._sorting.criteria.length; i++) {
 	      if (this._sorting.criteria[i].column == criterion.column) {
 	        this._sorting.criteria[i] = criterion;
@@ -638,10 +682,9 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 	};
 	
 	var findDuplicatesFromColumn = function(_rows, self, table, columnName) {
-	    
+		
 		Refine.fetchRows(theProject.rowModel.start, theProject.rowModel.filtered, function() {
 			 var rows = theProject.rowModel.rows;
-			 //console.log("Row========>"+JSON.stringify(rows));
 			  var status; 
 				var temp = JSON.parse(JSON.stringify(Refine.columnNameToColumn(columnName)));
 				var index = temp.cellIndex;
@@ -682,29 +725,6 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 		  	        	duplicate[r] = false; 
 		  	        }
 			    }
-			    /*Refine.postCoreProcess(
-			            "edit-one-cell", 
-			            {},
-			            {
-			              row: r,
-			              cell: index,
-			              value: statusList[r],
-			              type: "text"
-			            },
-			            {},
-			            {
-			              onDone: function(o) {
-			                if (o.cell.r) {
-			                  o.cell.r = o.pool.recons[o.cell.r];
-			                }
-
-			                self._cell = o.cell;
-			                self._dataTableView._updateCell(self._rowIndex, self._cellIndex, self._cell);
-			                self._render();
-			                self._dataTableView._adjustDataTables();
-			              }
-			            }
-			          );*/
 		  }
 			  
 			  Refine.postCoreProcess(
@@ -716,7 +736,7 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 		    	      { modelsChanged: true },
 		    	      {
 		    	    	  onDone: function(o) {
-					        	var expQuery = "grel:if(value==null, 'Duplicate', 'Non-Duplicate')";
+					          var expQuery = "grel:if(value==null, 'Duplicate', if(forEach(row.columnNames,cn,if(isNull(cells[cn].value),'Incomplete','')).uniques().length() > 1, 'Incomplete', 'Valid'))";
 								  Refine.postCoreProcess(
 									      "add-column", 
 									      {
@@ -726,9 +746,11 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 									        onError: "keep-original"
 									      },
 									      { expression: expQuery.toString() },
-									      { modelsChanged: true },
+									      { },
 									      {
-									        onDone: function(o) {
+									    	onDone: function(o) {
+									    		self._collapsedColumnNames[columnName+1] = true;
+										    	self.render();
 									        	Refine.postCoreProcess(
 									        		      "remove-column", 
 									        		      {
@@ -745,7 +767,13 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 														        	          newColumnName: columnName
 														        	        },
 														        	        null,
-														        	        { modelsChanged: true }
+														        	        { modelsChanged: true },
+														        	        {
+														        	        	onFinallyDone: function(o) {
+														        	        		self._collapsedColumnNames = [];
+														        	        		self.render();
+														        	        	}
+														        	        }
 														        	      );
 														        	
 														        }
@@ -757,6 +785,14 @@ DataTableView.prototype._addSortingCriterionColDuplicate = function(criterion, c
 					        }
 					      }
 		    	    );
+			  ui.browsingEngine.addFacet(
+				      "list",
+				      {
+				        "name": 'Status',
+				        "columnName": 'Status',
+				        "expression": "value"
+				      }
+				  );
 		  }, this._sorting);
 	};
 	
@@ -1002,14 +1038,6 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
     },
     {},
     {
-        label: $.i18n('core-views/functional-integrity-check'),
-        id: "core/functional-integrity-check",
-        click: function() {
-        	//addTwoIntegers(5, 10);
-        }
-    },
-    {},
-    {
         label: $.i18n('core-views/check-duplicates'),
         id: "core/check-duplicates",
         click: function() {
@@ -1025,10 +1053,49 @@ DataTableView.prototype._createMenuForAllColumns = function(elmt) {
   MenuSystem.createAndShowStandardMenu(menu, elmt, { width: "160px", horizontal: false });
 };
 
-/*var addTwoIntegers = function (a, b) { 
-	var jcoClass = new Packages.java.type("com.google.refine.sapjco.SapJcoConnectionMain");
-	console.log(jcoClass.addTwoIntegers(a, b));
-};*/
+var testJSP = function () { 
+	var request = new XMLHttpRequest()
+
+	// Open a new connection, using the GET request on the URL endpoint
+	//request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+	
+	request.open('GET', 'http://216.215.77.162:50000/sap/opu/odata/SAP/ZOTC_DV1_SRV/Sale_OrdF4Set?$format=json', true)
+	request.setRequestHeader("Authorization", "Basic UGFja2lhcmFqOlNpZXJyYUAyMDE5");
+	request.setRequestHeader("Access-Control-Allow-Origin",'*');
+	request.onload = function() {
+		var data = JSON.parse(this.response)
+
+		  if (request.status >= 200 && request.status < 400) {
+		    data.forEach(movie => {
+		      console.log(movie.title)
+		    })
+		  } else {
+		    console.log('error')
+		  }
+	}
+
+	// Send request
+	request.send()
+	
+	/*var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "http://216.215.77.162:50000/sap/opu/odata/SAP/ZOTC_DV1_SRV/Sale_OrdF4Set?$format=json",
+			  "method": "GET",
+			  "headers": {
+				"Access-Control-Allow-Origin":  "*",
+				"Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+				"Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, X-Token",
+				"Access-Control-Allow-Credentials": "true",
+			    "Authorization": "Basic UGFja2lhcmFqOlNpZXJyYUAyMDE5",
+			    "cache-control": "no-cache"
+			  }
+			}
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});*/
+};
 
 DataTableView.prototype._createSortingMenu = function(elmt) {
   var self = this;

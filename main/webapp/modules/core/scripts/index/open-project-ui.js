@@ -278,7 +278,7 @@ Refine.OpenProjectUI.prototype._renderProjects = function(data) {
         .appendTo($(tr.insertCell(tr.cells.length)));
     };
     
-    appendMetaField(project.creator);
+	appendMetaField(project.creator)
     appendMetaField(project.subject);
     appendMetaField(project.description, '20%');
     appendMetaField(project.rowCount);

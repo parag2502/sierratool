@@ -92,7 +92,7 @@ ProcessPanel.prototype.update = function(updateOptions, onDone) {
 };
 
 ProcessPanel.prototype.showUndo = function(historyEntry) {
-  var self = this;
+  /*var self = this;
 
   this._latestHistoryEntry = historyEntry;
 
@@ -108,7 +108,7 @@ ProcessPanel.prototype.showUndo = function(historyEntry) {
   this._div
     .fadeIn(200)
     .delay(10000)
-    .fadeOut(200);
+    .fadeOut(200);*/
 };
 
 ProcessPanel.prototype.undo = function() {
